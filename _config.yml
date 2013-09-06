@@ -1,0 +1,16 @@
+name: John Starr Dewar
+markdown: redcarpet
+pygments: true
+permalink: /blog/:year/:month/:day/:title/
+picture:
+  source: assets/images/_fullsize
+  output: generated
+  markup: "picturefill"
+  presets:
+    default:
+      ppi: [1, 2]
+      attr:
+        class: "fullWidthImage"
+        itemprop: "image"
+      source_default:
+        width: "630"

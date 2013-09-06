@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+<p class="meta">{{ page.date | date_to_string }}</p>
+
+<div class="post">
+{{ content }}
+</div>
+<div class="cf"></div>
+
+<script type="text/javascript">
+  var url = "http://jstarrdewar.com";
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = url + '{{ page.url }}';
+  var disqus_url = url + '{{ site.url }}{{ page.url }}';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
