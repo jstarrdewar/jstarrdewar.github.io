@@ -20,7 +20,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+  font-size: 100%;
+  font-weight: 500;
+}
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
@@ -28,6 +30,8 @@ p { margin: 1em 0; }
 a         { color: #00a; }
 a:hover   { color: #000; }
 a:visited { color: #a0a; }
+
+sup { vertical-align: top; position: relative; top: -6px; }
 
 /*****************************************************************************/
 /*
@@ -56,11 +60,11 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
+  font-size: 18px;
+  font-weight: 300;
   text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+  margin: 54px 72px;
+  line-height: 24px;
 }
 
 .site .header a {
@@ -157,4 +161,14 @@ ul.posts span {
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+.columnized {
+    -webkit-column-width: 460px;
+    -moz-column-width: 460px;
+    column-width: 460px;
+
+    -webkit-column-gap : 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
 }
