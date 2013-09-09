@@ -25,7 +25,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
+p { }
+p+p {text-indent: 1em}
 
 a         { color: #00a; }
 a:hover   { color: #000; }
@@ -63,8 +64,9 @@ ul.posts span {
   font-size: 18px;
   font-weight: 300;
   text-align: justify;
-  margin: 54px 72px;
+  margin: 54px auto;
   line-height: 24px;
+  width: 954px;
 }
 
 .site .header a {

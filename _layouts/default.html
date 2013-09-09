@@ -6,13 +6,6 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
 
-    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
-    <script type="text/javascript">
-      try {
-        Typekit.load();
-      } catch (e) {
-      }
-    </script>
     <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -38,8 +31,17 @@
     </div>
     <!-- /container -->
 
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
     <script type="text/javascript">
-//      $('pre').
+      try {
+        Typekit.load({
+          active: function () {
+            console.log($('p').nextUntil(':not(p)'));
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
     </script>
 
   </body>
