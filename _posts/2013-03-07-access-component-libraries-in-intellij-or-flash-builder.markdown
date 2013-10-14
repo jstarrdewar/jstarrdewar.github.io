@@ -12,31 +12,33 @@ If you find yourself stuck writing a complicated Flash Banner, you will run into
 
 That means that if you wish to use IntelliJ IDEA or Flash Builder to edit your code, you have to put up with them complaining about missing classes and a lack of code completion.  Or does it?
 
-<!--more-->
-
-An .mxp file for Flash CS6 is just a collection of swcs and/or as3 files.  When the .mxp file is installed, Extension Manager copies those files into your Application Support folder.  
+An .mxp file for Flash is just a collection of swcs and/or as3 files.  When the .mxp file is installed, Extension Manager copies those files into your Application Support folder.  
 
 The folder locations for various platforms are mentioned in this [Adobe Support Document](http://help.adobe.com/en_US/flash/cs/extend/WS5b3ccc516d4fbf351e63e3d118a9024f3f-7fe8.html):
 
 __Mac OS X:__<br/>
-`~/Library/Application Support/Adobe/Flash CS6/language/Configuration/Components/`
+`~/Library/Application Support/Adobe/Flash CC/language/Configuration/Components/`
 
 __Windows 7:__<br/>
-`C:\Users\USERNAME\AppData\Local\Adobe\Flash CS6\language\Configuration\Components\`
+`C:\Users\USERNAME\AppData\Local\Adobe\Flash CC\language\Configuration\Components\`
 
 __Windows Vista:__<br/>
-`C:\Users\USERNAME\Local Settings\Application Data\Adobe\Flash CS6\language\Configuration\Components\`
+`C:\Users\USERNAME\Local Settings\Application Data\Adobe\Flash CC\language\Configuration\Components\`
 
 __Windows XP:__<br/>
-`C:\Documents and Settings\USERNAME\Local Settings\Application Data\Adobe\Flash CS6\language\Configuration\Components\`
+`C:\Documents and Settings\USERNAME\Local Settings\Application Data\Adobe\Flash CC\language\Configuration\Components\`
 
 
 Thanks to [Jarrod Cope over in the Google Product Forums](http://productforums.google.com/forum/#!topic/doubleclick-rich-media/g_edWvoFP40) and "bvb" down in the comments on this page, for letting me know the locations on OS X and Windows before I was able to find that support document!
 
 Just add the library to your IDE of choice, et voilà!  Here is a screenshot of the DoubleClick Studio swc files loaded into IntelliJ:
 
-!(https://s3.amazonaws.com/jstarrdewar.com.bucket/intellij_project_structure_doubleclick_swc.gif)
+<p class="fullWidthImage">
+	<img src="/assets/images/2013_03_07/intellij_project_structure_doubleclick_swc.gif">
+</p>
 
 Success!
 
-!(https://s3.amazonaws.com/jstarrdewar.com.bucket/doubleclick_swc_success.gif)
+<p class="fullWidthImage">
+	<img src="/assets/images/2013_03_07/doubleclick_swc_success.gif">
+</p>

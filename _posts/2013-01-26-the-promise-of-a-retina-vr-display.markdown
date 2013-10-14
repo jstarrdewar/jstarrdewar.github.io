@@ -9,8 +9,6 @@ categories:
 
 By the end of the decade, products like the [Oculus Rift Head-Mounted Display](http://www.oculusvr.com) could breathe new life into the PC business.  I say this because I see great potential in the device for a whole new kind of computing experience.  I think its utility could go far beyond games: it could replace our existing screens and monitors for day-to-day computing.
 
-<!--more-->
-
 I’m not alone in imagining this future.  In fact, I recently found out about a proof-of-concept called Ibex that you can run on your Mac or Linux machine.  You can download it here: <http://hwahba.com/ibex/>
 
 The developer, Hesham Wahba, has ideas about this very similar to mine.  I think that one of the big advantages of this would be to be able to set a “desktop” that’s actually a fully 3D environment of some sort.  I think that would be far more pleasant than the current experience of sitting in a cubicle or bedroom all day.  Imagine an alpine meadow or a tropical beach.  I personally would like to spend my workday in Rivendell.

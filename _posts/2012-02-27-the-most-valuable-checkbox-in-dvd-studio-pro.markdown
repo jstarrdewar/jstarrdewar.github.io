@@ -11,7 +11,7 @@ categories:
 This has happened to me over and over again: it's the last minute of a busy day.  We're rushing to burn a DVD to send to a client.  All the footage has been compressed.  Everything is perfect.  The DVD looks good in the simulator.  Let's burn this thing!  Hit burn.  DVD Studio Pro thinks for a while and then fails.  "Muxing Error" it says.  Sadness and despair prevails.
 
 Fortunately, there is one checkbox hidden in the preferences that usually fixes this error and sends us on our merry way home.
-<!--more-->
+
 ![Screenshot](http://documentation.apple.com/en/dvdstudiopro/usermanual/Art/S02/S0251_TrackPrefs.png)
 
 `Preferences > Track > Fix invalid markers on build`

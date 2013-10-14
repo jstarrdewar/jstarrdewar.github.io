@@ -19,6 +19,7 @@ instead of using plugins for the mothership IntelliJ IDE:
 1. Efficiency: fewer plugins are loaded, so the app uses less memory and starts up faster.
 2. Ease of setup: Project setup is optimized in the sub-IDEs. For example, in RubyMine, you only have to choose a folder with a Rails project in it, whereas in IntelliJ you have to also set up an SDK environment and create a project file.
 3. Stability: Occasionally an enhancement to IntelliJ will break a major plugin. 10.5 broke compatibility with the RubyMine plugin, because the plugin was slightly behind schedule, and the issue wasn't resolved for ten days.
+4. Availability: Some IDE's aren't available as plugins.  For example: AppCode.
   
 Of course there are downsides as well: you save some money by only using
 IntelliJ if you plan on developing in many different languages. It would be

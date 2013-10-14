@@ -47,7 +47,6 @@ Here's how it's used on this site:
 ```
 
 You can also use this technique with JavaScript to do a lot of useful things.  I've found a few which I'll share with you.
-<!--more-->
 
 Now were you wondering about `no-js`?  This is a simple example of using JavaScript to control overrides.  The Modernizr library, very common on the web these days, provides this to give you a way of styling your page especially for people who have disabled JavaScript.  When Modernizr loads, it will remove the `no-js` class.  You could use this knowledge to show a message telling your users that JavaScript isn't optional on your site, for example, using only css.
 

@@ -21,7 +21,7 @@ For example, take the following code:
 
 In this case what often happens is that the button will disappear instantly instead of showing the 0.25 second animation.  Confusingly, it also displays the log message after 0 seconds. There is no delay happening at all.  Why are our perfectly clear instructions being ignored?
 
-Worse yet, this problem is often intermittent.  Sometimes it will work fine, and other times it won't.  You may even be able to solve the issue by adding a delay with the `animateWithDuration:delay:options:animations:completion:` method.  But how can you know how long to make the delay?  On slower devices it may have to be longer.
+Worse yet, this problem is often intermittent.  Sometimes it will work fine, and other times it won't.  You may even be able to solve the issue by adding a delay with the `animateWithDuration: delay: options: animations: completion: ` method.  But how can you know how long to make the delay?  On slower devices it may have to be longer.
 
 So here's what's really going on: Core Animation is making a decision for  you. If the view is not in the view hierarchy, it should not waste cycles animating.  Furthermore, the animation should not ever start midway through (that would look bad, right?).  So it forces any offscreen animations to immediate completion.
 

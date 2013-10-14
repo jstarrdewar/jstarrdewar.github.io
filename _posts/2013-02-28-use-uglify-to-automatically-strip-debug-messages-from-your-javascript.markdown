@@ -13,7 +13,7 @@ Of course, you could just leave the `console.log` statements in the code.  There
 
 That brings us to problem #2.  There is a performance cost to having the browser catching log events.  Usually this won't really make any appreciable difference, unless you have a log message in a big loop somewhere, but it's something to be aware of.
 
-If you have a minification step, UglifyJS will afford you a better solution.<!--more-->  The following technique is now pretty clearly documented in the UglifyJS ReadMe.  Yet perhaps because it was a bit confusing before, most people that I know weren't aware that you could do this.
+If you have a minification step, UglifyJS will afford you a better solution. The following technique is now pretty clearly documented in the UglifyJS ReadMe.  Yet perhaps because it was a bit confusing before, most people that I know weren't aware that you could do this.
 
 The trick is that you can define constants while minifying.  For example, this command...
 

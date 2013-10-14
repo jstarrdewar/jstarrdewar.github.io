@@ -24,7 +24,7 @@ There's actually a GUI that looks like it ought to be able to do this for you
 here in Adobe's strange little web-based local settings manager thingy:
 
 
-[http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html)
+[Adobe Settings Manager](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html)
 
 However, I have found it doesn't like to save my settings. You might try it first
 to see if it saves you the trouble of going through the steps below.
