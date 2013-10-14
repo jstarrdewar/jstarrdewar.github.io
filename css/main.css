@@ -20,9 +20,12 @@ body {
 	background: url("/assets/images/simple_noise.png");
 /*	background-attachment: fixed;	*/
 /*	background: #F9F9F9;*/
+    display: flex;
+    flex-flow: row wrap;
+    /* This aligns items to the end line on main-axis */
+    flex-direction: row;
+	align-content: space-between;
 }
-
-
 
 h1, h2, h3, h4, h5, h6 {
   font-size: .95rem;
@@ -186,9 +189,9 @@ header h1 {
 /*  border-top-right-radius: 3px;*/
 }
 
-.bottom-margin {
+.margin {
 	height:2rem;
-	width: 1rem;
+	width: 100%;
 }
 
 .site .header a {

@@ -18,7 +18,6 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png" />
 
     <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
     <script type="text/javascript">
       try {
@@ -60,10 +59,11 @@
   		</div>
 	</header>
 	  <div id="topStripe" class="stripe"></div>
-	  <div class="bottom-margin"></div>
+  	  <div class="margin"></div>
 
 
-    <div class="container">
+    <div id="main" class="container">
+		
 		<!-- <header class="tk-omnes-pro">
 			<h1>John Starr Dewar</h1>
 			<div id="nav">
@@ -80,10 +80,18 @@
       <div class="site tk-freight-sans-pro">
         {{ content }}
       </div>
-	  <div class="bottom-margin"></div>
     </div>
+  <div class="margin"></div>
   <div id="bottomStripe" class="stripe"></div>
-	
+  <script type="text/javascript">
+    var bottomStripe = document.getElementById("bottomStripe");
+	var main = document.getElementById("main");
+	if (main.offsetHeight < window.innerHeight) {
+		console.log("main is smaller than window");
+	}
+
+console.log(bottomStripe);
+  </script>
     <!-- /container
 
     <a class="twitter-timeline" href="https://twitter.com/jstarrdewar" data-widget-id="377253789658402816">Tweets by @jstarrdewar</a>
