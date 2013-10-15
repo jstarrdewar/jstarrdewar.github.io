@@ -20,11 +20,16 @@ body {
 	background: url("/assets/images/simple_noise.png");
 /*	background-attachment: fixed;	*/
 /*	background: #F9F9F9;*/
-    display: flex;
-    flex-flow: row wrap;
-    /* This aligns items to the end line on main-axis */
-    flex-direction: row;
-	align-content: space-between;
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    align-content: space-between;
+	    align-items: flex-start;
+
+}
+
+.no-flexwrap body {
+	display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,6 +68,42 @@ sup { vertical-align: top; position: relative; top: -0.33rem; }
 
 pre, code, .gist {
 	font-size: .7rem;
+}
+
+ul {
+	margin-top: 1rem;
+}
+
+#follow ul {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	list-style-type: none;
+	display: block;
+	float: left;
+}
+
+#follow h1 {
+	margin-bottom: 1rem;
+}
+
+#follow iframe {
+	display: block;
+	float: right;
+}
+
+#home {
+	text-align: center;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
 }
 
 /*****************************************************************************/

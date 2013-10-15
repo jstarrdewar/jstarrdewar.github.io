@@ -17,6 +17,12 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png" />
 	<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png" />
 
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
     <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
     <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
     <script type="text/javascript">
@@ -30,11 +36,10 @@
       }
     </script>
 
-    <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+	<script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript">
+    		Modernizr.addTest('flexwrap', Modernizr.testAllProps('flexWrap'));
+    </script>
 
   </head>
   <body>
@@ -54,8 +59,7 @@
   		<div id="nav">
   			<a href="/about">About</a>
   			<a href="/">Posts</a>
-			<a href="/">Work</a>
-  			<a href="/">Follow</a>
+  			<a href="/follow">Follow</a>
   		</div>
 	</header>
 	  <div id="topStripe" class="stripe"></div>
@@ -84,13 +88,11 @@
   <div class="margin"></div>
   <div id="bottomStripe" class="stripe"></div>
   <script type="text/javascript">
-    var bottomStripe = document.getElementById("bottomStripe");
-	var main = document.getElementById("main");
-	if (main.offsetHeight < window.innerHeight) {
-		console.log("main is smaller than window");
-	}
-
-console.log(bottomStripe);
+  var bottomStripe = document.getElementById("bottomStripe");
+  
+  if (!Modernizr.flexwrap && window.innerHeight > bottomStripe.offsetTop + 10) {
+	  bottomStripe.parentNode.removeChild(bottomStripe);
+  }
   </script>
     <!-- /container
 

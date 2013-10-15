@@ -19,16 +19,16 @@ It was a revelation!  No soy sauce whatsoever.  It was moist and ten times as de
 
 Shortly thereafter I accidentally bought some 塩鮭 at a Japanese supermarket.  That is, salted salmon.  (It's not my fault; in English it was only labeled "Salmon".  It's usually latinized as some variation on shioyake, shiojake, or shiozake.)  At any rate, it's intensely salty.  Unable to eat it as I had originally intended, I realized that it would be the perfect ingredient for a fried rice dish inspired by my earlier experience.  Hence the following recipe was born:
 
-###Salmon Fried Rice
+####Salmon Fried Rice
 
-#### Ingredients (2 servings)
+##### Ingredients (2 servings)
 - Japanese Salted Salmon or Chinese Salted Pork (4 oz or less)
 - cooked white rice (measured as 2 cups before cooking);
 - scallions (to taste, probably at least 3 of them)
 - edamame and/or peas (to taste, optional)
 - 1 or 2 eggs, scrambled (optional, cook them separately!)
 
-#### Instructions
+##### Instructions
 1. Cook the rice.<sup>3</sup>
 
 2. When the rice is done, cook the salmon until it flakes easily.  Remember that it will keep cooking after you take it off the heat, so aim for it to be slighly undercooked when you do. (I just throw it in the microwave for about a minute on high). Flake the salmon into a bowl.
