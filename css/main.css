@@ -20,17 +20,17 @@ body {
 	background: url("/assets/images/simple_noise.png");
 /*	background-attachment: fixed;	*/
 /*	background: #F9F9F9;*/
-	    display: flex;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
-	    align-content: space-between;
-	    align-items: flex-start;
+/*	    display: flex;*/
+/*	    flex-wrap: wrap;*/
+/*	    justify-content: space-between;*/
+/*	    align-content: space-between;*/
+/*	    align-items: flex-start;*/
 
 }
 
-.no-flexwrap body {
-	display: block;
-}
+/*.no-flexwrap body {*/
+/*	display: block;*/
+/*}*/
 
 h1, h2, h3, h4, h5, h6 {
   font-size: .95rem;
