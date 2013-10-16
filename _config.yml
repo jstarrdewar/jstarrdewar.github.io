@@ -1,6 +1,9 @@
 name: John Starr Dewar
 markdown: redcarpet
 pygments: true
+url: http://jstarrdewar.com
+title: John Starr Dewar
+author: John Starr Dewar
 permalink: /blog/:year/:month/:day/:title/
 picture:
   source: assets/images/_fullsize

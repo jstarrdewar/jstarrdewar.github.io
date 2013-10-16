@@ -38,7 +38,7 @@
 
 	<script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
     <script type="text/javascript">
-    		Modernizr.addTest('flexwrap', Modernizr.testAllProps('flexWrap'));
+/*    		Modernizr.addTest('flexwrap', Modernizr.testAllProps('flexWrap'));*/
     </script>
 
   </head>
@@ -59,11 +59,12 @@
   		<div id="nav">
   			<a href="/about">About</a>
   			<a href="/">Posts</a>
+			<a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
   			<a href="/follow">Follow</a>
   		</div>
 	</header>
 	  <div id="topStripe" class="stripe"></div>
-  	  <div class="margin"></div>
+  	  <div id="topMargin" class="margin"></div>
 
 
     <div id="main" class="container">
@@ -85,14 +86,44 @@
         {{ content }}
       </div>
     </div>
-  <div class="margin"></div>
+  <div id="bottomMargin" class="margin"></div>
   <div id="bottomStripe" class="stripe"></div>
   <script type="text/javascript">
+  var topStripe = document.getElementById("bottomStripe");
+  var topMargin = document.getElementById("bottomMargin");
+  var mainContent = document.getElementById("main");
   var bottomStripe = document.getElementById("bottomStripe");
+  var bottomMargin = document.getElementById("bottomMargin");
   
+  var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+  var bottomMarginHeight = bottomMargin.offsetHeight;
+  
+  var seconds = 0;
+  
+  function checkHeight() {
+	  setTimeout(function () {
+		  var totalHeight = decorationHeight + mainContent.offsetHeight;
+		  
+		  if (totalHeight + bottomMarginHeight < window.innerHeight) {
+			  if (window.innerHeight - totalHeight < 0) {
+				  bottomMargin.style.height = "2rem";
+				  } else {
+					  bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+				  	
+				  }
+		  }
+		  if (seconds < 30) {
+			  seconds++;
+			  checkHeight();
+		  }
+	  }, 1000);
+  }
+  checkHeight();
+  
+  /* 
   if (!Modernizr.flexwrap && window.innerHeight > bottomStripe.offsetTop + 10) {
 	  bottomStripe.parentNode.removeChild(bottomStripe);
-  }
+  }*/
   </script>
     <!-- /container
 
