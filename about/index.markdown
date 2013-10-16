@@ -1,6 +1,9 @@
 ---
 layout: default
 title: About John Dewar
+sitemap:
+    priority: 1.0
+    changefreq: monthly
 ---
 
 <div id="home">
