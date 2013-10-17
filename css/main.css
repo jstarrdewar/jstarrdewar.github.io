@@ -146,10 +146,7 @@ header {
 }
 
 header h1 {
-	text-align: center;
-	font-size: 3rem;
-	font-weight: 100;
-	color: #8B8B8B;
+	display:none;
 }
 
 #nav a {
@@ -205,7 +202,7 @@ header h1 {
 .container {
     margin: auto;
     max-width: 38rem;
-    min-width: 14rem;
+    min-width: 240px;
 }
 
 .fullWidthImage img {
@@ -235,6 +232,7 @@ header h1 {
 	width: 100%;
 }
 
+/*
 .site .header a {
   font-weight: bold;
   text-decoration: none;
@@ -261,6 +259,7 @@ header h1 {
 .site .header a.extra:hover {
   color: #000;
 }
+*/
 
 .site .meta {
   color: #aaa;
@@ -309,4 +308,84 @@ hr {
 
 #disqus_thread {
 	padding-top: 1rem;
+}
+
+@media (max-width: 1060px) {
+	header {
+		top: 0;
+		left: 0;
+		width: 100%;
+		color: #555;
+		font-size: 1rem;
+		text-align: center;
+		background: #2999CC;
+/*	    border-bottom: 1px solid rgba(0,0,0,.15);*/
+		  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+		  -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.5);
+		  box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.5);
+	}
+	
+	#topStripe, #bottomStripe {
+		display: none;
+	}
+
+/*	header h1 {
+		display: block;
+		float: left;
+		font-size: 1rem;
+		font-weight: 100;
+		color: #145986;
+		text-shadow: 0 1px 1px #5CB1D8;
+	}*/
+	
+	#pic {
+		background-size: 80px;
+		width: 32px;
+		height: 33px;
+		background-position-x: 31px;
+		float: left;
+	}
+
+	#nav {
+		float: right;
+	}
+
+	#nav a {
+		display: inline-block;
+		margin-left: .25rem;
+		text-shadow: none;
+		color: white;
+		line-height: 32px;
+	}
+	
+	#nav a:visited { color: white; }
+}
+
+@media (max-width: 814px) {
+	.container {
+		max-width: 100%;
+	}
+	
+	.site {
+		border-radius: 0;
+		border: none;
+	}
+	
+	.margin {
+		height: 1rem;
+	}
+	
+	#nav {
+		margin-right: .5rem;
+	}
+	
+	#pic {
+		margin-left: .5rem;
+	}
+}
+
+@media (max-width: 339px) {
+	html {
+		font-size: 16px;
+	}
 }

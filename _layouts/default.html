@@ -17,10 +17,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png" />
 	<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png" />
 
-    <!-- syntax highlighting CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
 	
     <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
@@ -40,17 +37,14 @@
 
   </head>
   <body>
+	  <div id="topStripe" class="stripe"></div>
+	  
+	  	
   	<header class="tk-omnes-pro">
-  		<!-- <h1>John Starr Dewar</h1> -->
-		<!-- <div>
-			John
-		</div>
-		<div>
-			Starr
-		</div>
-		<div>
-			Dewar
-		</div> -->
+  	  <div class="container">
+		
+  		<h1>John Starr Dewar</h1>
+
 			<div id="pic">
 			</div>
   		<div id="nav">
@@ -59,26 +53,15 @@
 			<a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
   			<a href="/follow">Follow</a>
   		</div>
+	</div>
+		
 	</header>
-	  <div id="topStripe" class="stripe"></div>
+	
   	  <div id="topMargin" class="margin"></div>
 
 
     <div id="main" class="container">
 		
-		<!-- <header class="tk-omnes-pro">
-			<h1>John Starr Dewar</h1>
-			<div id="nav">
-				<a>Blog</a>
-				<a>About</a>
-				<a>Projects</a>
-				<a>Contact</a>
-			</div>
-		</header> -->
-
-			<!-- <div id="name">
-				JOHN STARR DEWAR
-			</div> -->
       <div class="site tk-freight-sans-pro">
         {{ content }}
       </div>
@@ -117,18 +100,21 @@
   }
   checkHeight();
   
-  /* 
-  if (!Modernizr.flexwrap && window.innerHeight > bottomStripe.offsetTop + 10) {
-	  bottomStripe.parentNode.removeChild(bottomStripe);
-  }*/
+
   </script>
-    <!-- /container
+  <script type="text/javascript">
 
-    <a class="twitter-timeline" href="https://twitter.com/jstarrdewar" data-widget-id="377253789658402816">Tweets by @jstarrdewar</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8569918-1']);
+    _gaq.push(['_trackPageview']);
 
--->
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
+  </script>
 
   </body>
 </html>
