@@ -19,10 +19,10 @@ layout: default
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-  var url = "http://jstarrdewar.com";
   var disqus_shortname = 'jstarrdewar-blog';
-  var disqus_identifier = url + '{{ page.url }}';
-  var disqus_url = url + '{{ site.url }}{{ page.url }}';
+  var disqus_identifier = '{{ page.url }}';
+  var disqus_url = '{{ site.url }}{{ page.url }}';
+  console.log(disqus_url);
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
@@ -42,4 +42,3 @@ layout: default
 </script>
 
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	
