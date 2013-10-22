@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Safari 5.1 broke HTML native drag and drop?"
-date: 2012-07-12 07:23
+title: "Android ListView Refresh Single Row"
+date: 2013-05-09 02:31
 comments: false
-so: http://stackoverflow.com/a/11499782/1084434
+so: http://stackoverflow.com/a/16453407/1084434
 categories: 
 - Stack Overflow
 ---

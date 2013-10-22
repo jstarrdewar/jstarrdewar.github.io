@@ -130,6 +130,16 @@ ul.posts a {
 	color: #8b8b8b;
 }
 
+.stackoverflow {
+	background: url("/assets/images/stackoverflow.png");
+	background-size: 119px;
+	display: inline-block;
+	width: 119px;
+	height: 31px;
+	margin-top: -8px;
+	margin-bottom: -1px;
+}
+
 /*****************************************************************************/
 /*
 /* Site

@@ -7,14 +7,14 @@ sitemap:
 ---
 
 <div id="home">
-  <h2>Blog Posts by John Starr Dewar</h2>
+  <h2>Posts by John Starr Dewar</h2>
   <ul class="posts">
     {% for post in site.posts %}
       <li>
 			  <span class="list-date">{{ post.date | date_to_string }}</span>		  
 			  <br/>
 			  {% if post.so %}
-			  <a href="{{ post.so }}">{{ post.title }}</a>
+			  <span class="stackoverflow"></span> <a href="{{ post.so }}">{{ post.title }}</a>
 			  {% else %}
 			  <a href="{{ post.url }}">{{ post.title }}</a>
 			  {% endif %}
