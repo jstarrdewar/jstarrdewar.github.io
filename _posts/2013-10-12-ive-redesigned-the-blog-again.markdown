@@ -2,7 +2,6 @@
 author: jstarrdewar
 date: '2013-10-12 11:59:35'
 layout: post
-slug: ive-redesigned-the-blog-again
 title: I've Redesigned My Blog Again
 comments: true
 ---

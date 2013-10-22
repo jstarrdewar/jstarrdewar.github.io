@@ -33,3 +33,5 @@ technique from time to time, hence the confusion. You need to be wary of
 breaking changes. To get the latest version, you could clone the PHP SDK and
 see what format is returned by this method:
 [getLogoutUrl](http://developers.facebook.com/docs/reference/php/facebook-getLogoutUrl/)
+
+My Stack Overflow answer that inspired this post is here: [http://stackoverflow.com/a/8765863/1084434](http://stackoverflow.com/a/8765863/1084434)
