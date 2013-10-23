@@ -28,13 +28,13 @@ Ibex doesn’t solve this problem (at least not yet) because it works by renderi
 Then next problem is resolution.  If you play with Ibex, you’ll see that it’s totally inadequate.  At 3840x2400, the body text of this blog is quite readable, but optical distortion makes the menu bar, shortcuts and tab titles quite difficult. At 1920x1200, I could barely read the body text.  The Oculus Rift dev kit’s resolution is only 1280x800, and that’s divided between two eyes (640x800).  Then you have to subtract even more resolution due to optical distortion.  Here's what it looks like (click for full-size):
 
 <a href="https://s3.amazonaws.com/jstarrdewar.com.bucket/Ibex_blog.jpg" style="white-space: normal">
-![Ibex Blog](https://s3.amazonaws.com/jstarrdewar.com.bucket/Ibex_blog.jpg)
+{% picture ibex_blog.jpg %}
 </a>
 
 Here it is at 3840x2400 (this is roughly the resolution of the sci-fi goggles in _Snow Crash_):
 
 <a href="https://s3.amazonaws.com/jstarrdewar.com.bucket/Ibex_3840x2400.jpg" style="white-space: normal">
-![Ibex Blog](https://s3.amazonaws.com/jstarrdewar.com.bucket/Ibex_blog.jpg)
+{% picture ibex_blog.jpg %}
 </a>
 
 Meanwhile, I’ve become spoiled by my laptop’s retina display.  By the time the Oculus headset comes to market, I believe most if not all of Apple’s computers will feature retina displays.  Surely the lineup will have changed over completely by Christmas 2014.  For an HMD-based work environment to really offer an advantage over monitors, it will have to offer resolution to match.  Unfortunately that’s a much bigger challenge than you might realize.  Since the Oculus has such a wide field of view, the necessary resolution is truly staggering.

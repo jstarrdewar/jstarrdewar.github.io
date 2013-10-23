@@ -18,19 +18,7 @@ html, body { height: 100%; }
 
 body {
 	background: url("/assets/images/simple_noise.png");
-/*	background-attachment: fixed;	*/
-/*	background: #F9F9F9;*/
-/*	    display: flex;*/
-/*	    flex-wrap: wrap;*/
-/*	    justify-content: space-between;*/
-/*	    align-content: space-between;*/
-/*	    align-items: flex-start;*/
-
 }
-
-/*.no-flexwrap body {*/
-/*	display: block;*/
-/*}*/
 
 h1, h2, h3, h4, h5, h6 {
   font-size: .95rem;
@@ -225,51 +213,15 @@ header h1 {
   padding-top: 1.5rem;
   font-weight: 300;
   text-align: left;
-/*  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);*/
-/*  -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.35);*/
-/*  box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.35);*/
   background: white;
   border-radius: 5px;
   border: 1px solid rgba(0,0,0,.15);
-
-/*  margin-top: 2rem;*/
-/*  border-top-left-radius: 3px;*/
-/*  border-top-right-radius: 3px;*/
 }
 
 .margin {
 	height:2rem;
 	width: 100%;
 }
-
-/*
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.site .header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.site .header h1.title a {
-  color: #a00;
-}
-
-.site .header h1.title a:hover {
-  color: #000;
-}
-
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
-}
-*/
 
 .site .meta {
   color: #aaa;
@@ -312,10 +264,6 @@ hr {
   background: none;
 }
 
-.post pre, .post code {
-/*    border-radius: 3px;*/
-}
-
 #disqus_thread {
 	padding-top: 1rem;
 }
@@ -329,7 +277,6 @@ hr {
 		font-size: 1rem;
 		text-align: center;
 		background: #2999CC;
-/*	    border-bottom: 1px solid rgba(0,0,0,.15);*/
 		  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 		  -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.5);
 		  box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -338,15 +285,6 @@ hr {
 	#topStripe, #bottomStripe {
 		display: none;
 	}
-
-/*	header h1 {
-		display: block;
-		float: left;
-		font-size: 1rem;
-		font-weight: 100;
-		color: #145986;
-		text-shadow: 0 1px 1px #5CB1D8;
-	}*/
 	
 	#pic {
 		background-size: 80px;
