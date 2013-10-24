@@ -57,6 +57,8 @@ From everything we've heard thus far, the consumer version will likely ship with
 
 For now, we’ll have to stick with games, but (_if_ the Oculus and/or Google Glass create enough demand) ten years from now the graphics power and displays needed for retina-level virtual-reality are likely to be priced within reach of consumers.  Power users – the type who would drop $1000-2000 on a 30” display today – probably won’t have to wait that long.  The virtual workspace technology will probably be useable within the next three to five years.<sup>3</sup>  Hopefully with projects like Ibex, we’ll be ready when that day comes.
 
+Related Posts: [Motion Tracking Goes a Long Way Towards Eliminating VR Sickness](/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness/)
+
 ---
 
 <sup>1.</sup> Not having used the device yet, I can’t say whether there would be problems with your brain expecting to need to refocus on objects at different distances.  It’s probable that won't be an issue because in very bright environments, your eyes have a very deep depth of field.

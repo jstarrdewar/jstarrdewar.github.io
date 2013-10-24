@@ -23,3 +23,5 @@ In [this recent PCWorld interview](http://www.pcworld.com/article/2053682/oculus
 The good news is that Half Life VR proves that it’s possible to make a playable First-Person Shooter that can be enjoyed by people who are not extremely acclimatized to VR.  The trouble is that if it requires an additional $300 investment in a STEM tracker, it may limit the audience too much to make an addressable market in the near term.
 
 (In a [recent interview with Brendan Iribe on Polygon](http://www.polygon.com/2013/10/17/4850272/oculus-ceo-gets-sick-from-vr-but-says-hes-found-the-remedy) it was revealed that a prototype Rift with positional tracking is working very well.  According to John Carmack in [yet another interview](http://www.engadget.com/2013/10/18/oculus-rift-john-carmack-interview/) – in the video at 3:30 – the final Rift will utilize optical tracking rather than electromagnetic tracking like the STEM and hydra.)
+
+Related Posts: [The Promise of a Retina VR Display](/blog/2013/01/26/the-promise-of-a-retina-vr-display/)
