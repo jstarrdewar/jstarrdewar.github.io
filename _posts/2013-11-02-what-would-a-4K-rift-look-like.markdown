@@ -6,7 +6,7 @@ title: What Would a 4K Rift Look Like?
 comments: true
 ---
 
-I’ve been stewing on the idea of a retina VR display, and I got interested in finding out what it would look like, and where the optics of the Oculus Rift become a limiting factor.
+I’ve been stewing on the idea of a retina VR display, and I got interested in finding out what it would look like, and if the optics of the Oculus Rift become a limiting factor.
 
 I had an idea: I can’t get ahold of a super-high resolution display, but my printer is certainly capable of producing much sharper images than the current Rift.  So I decided to try printing out a high resolution rendering to see if I could make my own retina Rift.
 
@@ -30,13 +30,17 @@ I decided my next approach would be to make a cardboard Rift.  I sacrificed a ne
 
 Finally I resorted to just holding the eyecups above the print, one in each hand.  I had to hold really still but at last I was able to reach some conclusions.
 
+First was the ooh-ahh moment; the depth that you can perceive in the image is tied very closely to the overall resolution.  With this high-res render, I could perceive far greater depth.  That will make games that try to play on fear of heights, like [AaaaaAAaaaAAAaaAAAAaCULUS!!!](https://share.oculusvr.com/app/aaaaaaaaaaaaaaaaaaaaculus), much more impactful.
+
+[Boon Cotter tried to calculate what the actual maximum depth that can be seen in the Rift is](http://www.booncotter.com/some-preliminary-vr-metrics/#comments) and came up with 300m — but in my personal experience it's much less than that.  In real life I can perceive stereo separation up to at least 800m (Boon's calculations were that the maximum possible would be 745m, but as a commenter pointed out there's a lot of subtlety to the human vision system which makes it hard to determine the answer with simple trigonometry).
+
 {% picture through_the_looking_glass.jpg %}
 
 It looks like a 600 ppi display is really about the limit of the eye cup lens optics that came with the dev kit.  Obviously I’m not correcting for chromatic aberration but I don’t think it would be possible to correct for the amount of smearing that occurs around the edge of the frame, something that you really don’t notice in the current rift.
 
 The result is that the block of text in the center of the “screen” is quite legible — impressive considering how _illegible_ text on the current headset can be — but the list of recent posts could only be read when hovering directly over it with the eye cup.
 
-I had a chance to ask Palmer Luckey about this directly and he said that the general optical configuration of the rift can avoid this edge smearing effect all the way up to retina resolutions.  However, the optics have to made with that resolution in mind.  Oculus now has experts on staff who know how to make these kinds of specific optimizations.  However, we shouldn't expect the optics to be optimized for resolutions higher than the screen.  The sharper the screen, the more expensive the lenses get.
+I had a chance to ask Palmer Luckey about this directly, and he said that the general optical configuration of the rift can avoid monochromatic aberrations all the way up to retina resolutions.  However, the optics have to made with that resolution in mind.  Oculus now has experts on staff who know how to make these kinds of specific optimizations.  However, we shouldn't expect the optics to be optimized for resolutions higher than the screen.  The sharper the screen, the more expensive the lenses get, because the manufacturing process and materials must be changed.
 
 Palmer also said that the optics on the upcoming 1080p rift will be considerably better than on the current rift.  In my ten-minute experience with the 1080p rift samples that have been making the rounds lately (and use the current optics) I wasn't able to discern any major shortcomings.  However I know that with my personal dev kit, I do notice some issues if I go looking for them, especially because my eyes are not exactly 64mm apart which means I can only get the image at optimal clarity in one eye or the other.
 
