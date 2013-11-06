@@ -18,7 +18,7 @@ Getting the images to line up properly was a bit of a challenge.  First I render
 
 I rendered the image at 12800x8000 pixels, which works out to about 2171 ppi at the size of the Oculus display.  I figured that would be approximately retina quality, since the screenshot was at about the same resolution in the center of the image.
 
-Unfortunately, that high resolution was too high for my printer.  It maxes out at only 600 dpi.  Even at that resolution, it turns out, the real resolution limit is the grain of the paper.  Still, that’s about 2500 dots across, so very nearly a simulation of a 4K display.  I carried on.  If you happen to have a printer capable of a much higher resolution and want to follow along, you can [download the full-sized 12.8K image here](https://s3.amazonaws.com/jstarrdewar.com.bucket/rift_retina_test_huge.jpg) and follow along.
+Unfortunately, that high resolution was too high for my printer.  It maxes out at only 600 dpi.  Even at that resolution, it turns out, the real resolution limit is the grain of the paper.  Still, that’s about 3500 dots across, so very nearly a simulation of a 4K display.  I carried on.  If you happen to have a printer capable of a much higher resolution and want to follow along, you can [download the full-sized 12.8K image here](https://s3.amazonaws.com/jstarrdewar.com.bucket/rift_retina_test_huge.jpg) and follow along.
 
 Next, I needed to take a look at my creation through the C cups.  My first idea was to try stuffing the print through the hole where the cups attach and using a plain white background as a backlight.  This worked OK, but the screen door was apparent and made it difficult to see any additional resolution.  The other problem was that once I cut the print in half, I had a terrible time getting it lined up properly again.
 
@@ -32,7 +32,7 @@ Finally I resorted to just holding the eyecups above the print, one in each hand
 
 First was the ooh-ahh moment; the depth that you can perceive in the image is tied very closely to the overall resolution.  With this high-res render, I could perceive far greater depth.  That will make games that try to play on fear of heights, like [AaaaaAAaaaAAAaaAAAAaCULUS!!!](https://share.oculusvr.com/app/aaaaaaaaaaaaaaaaaaaaculus), much more impactful.
 
-[Boon Cotter tried to calculate what the actual maximum depth that can be seen in the Rift is](http://www.booncotter.com/some-preliminary-vr-metrics/#comments) and came up with 300m — but in my personal experience it's much less than that.  In real life I can perceive stereo separation up to at least 800m (Boon's calculations were that the maximum possible would be 745m, but as a commenter pointed out there's a lot of subtlety to the human vision system which makes it hard to determine the answer with simple trigonometry).
+[Boon Cotter tried to calculate what the actual maximum depth that can be seen](http://www.booncotter.com/some-preliminary-vr-metrics/#comments) in the Rift is and came up with 300m — but in my personal experience it's much less than that.  In real life I can perceive stereo separation up to at least 800m (Boon's calculations were that the maximum possible would be 745m, but as a commenter pointed out there's a lot of subtlety to the human vision system which makes it hard to determine the answer with simple trigonometry).
 
 {% picture through_the_looking_glass.jpg %}
 
@@ -46,7 +46,7 @@ Palmer also said that the optics on the upcoming 1080p rift will be considerably
 
 (I know about the [IPD Adjuster from VR-Gear](http://www.shapeways.com/shops/vrgear), but I use the C cups so I need to find another solution).
 
-Update: [Palmer commented on reddit](http://www.reddit.com/r/oculus/comments/1q1gvc/what_would_it_be_like_to_look_through_a_4k_rift_i/cd8ac8b) and suggested using a window as a backlight for the checkbox \*slaps forehead\*. Here's my response:
+**Update:** [Palmer commented on reddit](http://www.reddit.com/r/oculus/comments/1q1gvc/what_would_it_be_like_to_look_through_a_4k_rift_i/cd8ac8b) and suggested using a window as a backlight for the checkbox \*slaps forehead\*. Here's my response:
 
 "Hey Palmer, thanks for reading! I did the experiment in the middle of the night, but I just gave your suggestion a go:
 My windows are all filthy which actually is quite an issue because the dust spots interfere with the image. A light table would definitely be the best solution. My dad has one in a closet somewhere so I'll have to dig it out next time I visit.
@@ -56,6 +56,8 @@ Something I noticed when trying to use the rift backlight: the paper grains show
 Overall a bit easier than holding the lenses by hand though. If I ever get ahold of a better printer, a light table, and better paper (oh, and maybe even your new and improved optics) I'll give it another go."
 
 I also had the idea on the reddit thread that one might be able to print on Glass like [Fracture](http://www.fractureme.com), but according to their website they print at 400 ppi.
+
+**Update 2:** Palmer suggested using an overhead transparency film for inkjets.  The guy ain't just pretending to be smart.
 
 _Related Posts:_
 
