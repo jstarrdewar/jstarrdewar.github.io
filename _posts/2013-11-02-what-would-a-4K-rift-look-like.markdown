@@ -46,6 +46,17 @@ Palmer also said that the optics on the upcoming 1080p rift will be considerably
 
 (I know about the [IPD Adjuster from VR-Gear](http://www.shapeways.com/shops/vrgear), but I use the C cups so I need to find another solution).
 
+Update: [Palmer commented on reddit](http://www.reddit.com/r/oculus/comments/1q1gvc/what_would_it_be_like_to_look_through_a_4k_rift_i/cd8ac8b) and suggested using a window as a backlight for the checkbox \*slaps forehead\*. Here's my response:
+
+"Hey Palmer, thanks for reading! I did the experiment in the middle of the night, but I just gave your suggestion a go:
+My windows are all filthy which actually is quite an issue because the dust spots interfere with the image. A light table would definitely be the best solution. My dad has one in a closet somewhere so I'll have to dig it out next time I visit.
+
+Something I noticed when trying to use the rift backlight: the paper grains show up strongly in the backlight and are somewhat larger than the dots of ink.
+
+Overall a bit easier than holding the lenses by hand though. If I ever get ahold of a better printer, a light table, and better paper (oh, and maybe even your new and improved optics) I'll give it another go."
+
+I also had the idea on the reddit thread that one might be able to print on Glass like [Fracture](http://www.fractureme.com), but according to their website they print at 400 ppi.
+
 _Related Posts:_
 
 [The Promise of a Retina VR Display](/blog/2013/01/26/the-promise-of-a-retina-vr-display/)
