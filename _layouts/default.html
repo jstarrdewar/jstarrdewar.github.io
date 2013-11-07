@@ -17,9 +17,13 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
     <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
 
+    {% if page.video == true %}
+    <link href="http://vjs.zencdn.net/4.3/video-js.css" rel="stylesheet">
+    {% endif %}
     <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/main.css">
 
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
     <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
     <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
     <script type="text/javascript">
@@ -32,13 +36,12 @@
         console.log(e);
       }
     </script>
-
-    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
-
+    {% if page.video == true %}
+    <script src="http://vjs.zencdn.net/4.3/video.js"></script>
+    {% endif %}
   </head>
   <body>
     <div id="topStripe" class="stripe"></div>
-
 
     <header class="tk-omnes-pro">
       <div class="container">

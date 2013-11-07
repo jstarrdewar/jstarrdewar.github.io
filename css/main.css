@@ -54,6 +54,12 @@ a:visited {
     color: #8D3BC4;
 }
 
+/* Video.js */
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-volume-level { background-color: #2999CC }
+.vjs-default-skin .vjs-control-bar { font-size: .5rem }
+.video-js { margin-top: 1rem }
+
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */
@@ -140,7 +146,7 @@ header h1 {
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
     body {
-        background-size: 120px;
+        background-size: 20px;
     }
 
     header h1 {
