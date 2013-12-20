@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Migrating Wordpress Data to Octopress/Jekyll</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>Migrating Wordpress Data to Octopress/Jekyll</h2>
+
+  <div class="list-date">21 Jan 2012</div>
+</div>
+
+<div class="post">
+  <p>In keeping with an apparent tradition, I will discuss the process of moving my data from Wordpress.com to Octopress.  It was not an entirely trouble-free process.  All of the following advice applies to Jekyll, not just Octopress.</p>
+
+<p>First of all, the default migration script failed to run.  I couldn&#39;t find any advice on the subject online, so I decided to try <a href="https://github.com/thomasf/exitwp">exitwp</a> instead.</p>
+
+<!-- more -->
+
+<p>Once you have cloned the repo you need to install the dependencies.  The instructions on Github are linux-specific.  The only tricky part is that you need to install libyaml.  Instead of using apt-get, just grab it from homebrew:</p>
+
+<p><code>brew install libyaml</code></p>
+
+<p>Then you can run:</p>
+
+<p><code>pip install --upgrade  -r pip_requirements.txt</code></p>
+
+<p>This step will compile libyaml.  Note that if you are not using virtualenv (see below) you should preface that command with <code>sudo</code>.</p>
+
+<p>Mac OS X Lion does not come with <a href="http://www.pip-installer.org">pip</a> installed.  You can follow the instructions here: <a href="http://www.pip-installer.org/en/latest/installing.html">http://www.pip-installer.org/en/latest/installing.html</a></p>
+
+<p>Note that the recommended way to get pip is via <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>.  Virtualenv is essentially the Python equivalent of <a href="http://beginrescueend.com/">RVM</a> (discussed <a href="/blog/categories/rvm/">often</a> on this blog).  However to achieve feature-parity with RVM you also need <a href="http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-05-virtualenvwrapper/index.html">virtualenvwrapper</a>.</p>
+
+<p>If you have not set up Python on your Mac with virtualenv/virtualenvwrapper I highly recommend you do so.  I have <a href="/blog/2012/01/22/rvm-for-python-setting-up-virtualenv-and-virtualenvwrapper-on-lion/">written a walkthrough</a> that updates the information available at the links already mentioned.</p>
+
+<p>Once you have gotten exitwp and its dependencies installed, simply drag the xml file you exported from wordpress (under <strong>Dashboard &gt; Tools &gt; Export</strong>) into the <em>exitwp/wordpress-xml</em> folder.  Then run:</p>
+
+<p><code>python exitwp.py</code></p>
+
+<p>If you&#39;re lucky, that&#39;s all there is to it.  Your posts will be converted to markdown and saved to the <em>exitwp/build/jekyll/username.wordpress.com/_posts</em> folder.  But I got an error message from the XML parser.</p>
+
+<p>Apparently this is common as Wordpress doesn&#39;t do the greatest job of formatting the XML.  This wasn&#39;t a big deal, though.  I just ran it through xmllint (which should be preinstalled in OS X) and fixed the two or three errors by hand.  If you have TextMate handy, just open it in there and run <strong>Bundles &gt; XML &gt; Validate Syntax</strong>.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2012/01/21/migrating-wordpress-data-to-octopress/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2012/01/21/migrating-wordpress-data-to-octopress/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

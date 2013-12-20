@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Input Box Tips, Part 2: Select All on Focus</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>Input Box Tips, Part 2: Select All on Focus</h2>
+
+  <div class="list-date">08 Feb 2012</div>
+</div>
+
+<div class="post">
+  <p>In <a href="/blog/2012/02/04/input-box-tips-part-1/">Part 1</a>, I showed how to limit the number of characters in a text input (easy) or a text area (somewhat more difficult.)  In this part, I&#39;ll address a common behavior in forms, which is for an input to select all of its contents automatically when you click or trigger a focus event on said input.</p>
+
+<p>Here is the first Google result: <a href="http://jquery-howto.blogspot.com/2009/04/select-text-in-input-box-on-user-select.html">Select text in input box on user select or focus</a>.  To summarize: all you have to do is <code>$(input).select()</code> in your click handler.</p>
+
+<p>Unfortunately, it&#39;s not quite that simple because calling <code>select()</code> doesn&#39;t work in every browser when the focus event is triggered by a mouse event.  The trouble is that the events are not fired in the same order on every browser.  Webkit happens to fire its mouseup event after the focus event, and that causes the text to highlight and instantly de-highlight again.  Result?  No selection.  &lt;!-- more --&gt;</p>
+
+<p>Shane Tomlinson figured this out and came up with a <a href="http://www.shanetomlinson.com/2009/input-textarea-select-on-click/">proper solution</a> to the problem.  But I don&#39;t like his solution because it takes too much code (21 lines, without the comments).  My preferred method is his original idea: add a setTimeout to knock the select() call onto the next frame, after all the events have finished firing.  No delay is necessary.</p>
+
+<div class="jsfiddle">
+<iframe style="width: 100%; height: "100px" src="http://jsfiddle.net/jstarrdewar/bJAmx/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+
+<p>It&#39;s just 4 tiny little lines of code and it works in all the browsers I tested (IE8, 9, Safari, Chrome, &amp; Firefox).  If jsFiddle is down, <a href="https://gist.github.com/1772965">here is a gist</a> you can look at instead.</p>
+
+<hr>
+
+<p>You may be wondering about line 2.  The reason I created the <code>input</code> variable is that <code>this</code> will refer to a different scope inside setTimeout&#39;s callback.  So we need to store a reference to <code>this</code> (which in a jQuery callback references the wrapped DOM object) that we can access from the callback.</p>
+
+<p>Of course we could always just put <code>$(&quot;#example&quot;).select()</code> inside the setTimeout callback, but I make it a rule never to duplicate jQuery selectors.  For one thing it&#39;s faster; you are not querying for the element twice (but you won&#39;t see any difference in this case; it would make a difference if the code was running many times in a loop of some kind).</p>
+
+<p>My primary reason for sticking to this rule is that it is always challenging to keep one&#39;s jQuery selectors in sync with the CSS.  When you rename something in the CSS, you might inadvertently break your JavaScript.  You then will have to search and replace for all your corresponding jQuery selectors.  It&#39;s a pain, and sometimes you miss one and wind up with a confusing bug.</p>
+
+<p>To further mitigate this issue, I try to use jQuery with id&#39;s as exclusively as possible and avoid using id&#39;s in the CSS altogether.  This leads to some duplication of effort in your HTML, but it&#39;s generally less onerous than excessive coupling between my JavaScript and CSS.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2012/02/08/input-box-tips-part-2/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2012/02/08/input-box-tips-part-2/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

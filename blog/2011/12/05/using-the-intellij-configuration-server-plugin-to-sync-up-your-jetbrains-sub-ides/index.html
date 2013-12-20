@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the IntelliJ Configuration Server Plugin to sync up your JetBrains sub-IDEs</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>Using the IntelliJ Configuration Server Plugin to sync up your JetBrains sub-IDEs</h2>
+
+  <div class="list-date">05 Dec 2011</div>
+</div>
+
+<div class="post">
+  <p>There are a few good arguments to be made for using JetBrains&#39; sub-IDEs
+instead of using plugins for the mothership IntelliJ IDE:</p>
+
+<ol>
+<li>Efficiency: fewer plugins are loaded, so the app uses less memory and starts up faster.</li>
+<li>Ease of setup: Project setup is optimized in the sub-IDEs. For example, in RubyMine, you only have to choose a folder with a Rails project in it, whereas in IntelliJ you have to also set up an SDK environment and create a project file.</li>
+<li>Stability: Occasionally an enhancement to IntelliJ will break a major plugin. 10.5 broke compatibility with the RubyMine plugin, because the plugin was slightly behind schedule, and the issue wasn&#39;t resolved for ten days.</li>
+<li>Availability: Some IDE&#39;s aren&#39;t available as plugins.  For example: AppCode.</li>
+</ol>
+
+<p>Of course there are downsides as well: you save some money by only using
+IntelliJ if you plan on developing in many different languages. It would be
+nice if JetBrains would offer an &quot;everything bundle&quot; with a price similar to
+the IntelliJ license.</p>
+
+<p>However, one would think that the biggest downside is that you have to do a
+lot of work to keep the applications in sync with your color scheme choices
+and keymap preferences. Thankfully, there is a native solution to this
+problem!&lt;!-- more --&gt; You can download the IntelliJ Configuration Server Plugin from the
+plugins repository.</p>
+
+<p>The name may be misleading, but the description states rather more clearly
+that the plugin can synchronize settings &quot;between IntelliJ platform products&quot;,
+that is, not just IntelliJ but RubyMine, AppCode, and so on. It will also
+synchronize settings between multiple computers, which is handy if you use a
+laptop as a secondary machine or want to bring work home.</p>
+
+<p>To use the plugin you must first create an account here:</p>
+
+<p><a href="http://account.jetbrains.com/Index.action">http://account.jetbrains.com/Index.action</a></p>
+
+<p>This account is not the same as the one you may be using for the YouTrack bug
+reporter in the support section of their site.</p>
+
+<p>Choose the IDE that has the settings you want to share among your other
+products and computers and activate the plugin in that program first. I highly
+recommend you backup your preferences first, because you do not really have
+any control over how the plugin merges your settings.</p>
+
+<p>For example, I had a customized theme in AppCode that I didn&#39;t want to be
+overwritten so I copied it to the desktop. You can find the preference files
+in ~/Library/Preferences/<em>appName</em></p>
+
+<p>Then activate the plugin in all of your remaining apps.</p>
+
+<p>Overwriting the server with your local backup is a bit tricky. IntelliJ gives
+priority to the versions held on the server, so simply dragging your
+preference file into the preferences folder will do nothing. The preference
+will be immediately overwritten by the server version again. In the case of
+the color scheme, the secret is to go to the color scheme preference pane and
+delete the scheme in question. That will delete it on the server. Then you can
+drag the backed up color scheme into the colors folder in your preferences
+library, restart the app, and reselect the color scheme. It will be uploaded
+to the the server and then synced down to your other apps.</p>
+
+<p>Otherwise, importing preferences normally should update the server. I&#39;m not
+sure why I like dragging the color theme XMLs around manually, but I do. I
+guess it&#39;s a psychological phenomenon.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2011/12/05/using-the-intellij-configuration-server-plugin-to-sync-up-your-jetbrains-sub-ides/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2011/12/05/using-the-intellij-configuration-server-plugin-to-sync-up-your-jetbrains-sub-ides/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

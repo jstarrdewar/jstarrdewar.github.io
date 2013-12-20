@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ruby Segmentation Faults and Abort Trap 6 in Lion: Some Solutions</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>Ruby Segmentation Faults and Abort Trap 6 in Lion: Some Solutions</h2>
+
+  <div class="list-date">04 Nov 2011</div>
+</div>
+
+<div class="post">
+  <p>Jump to the bottom of this post for updates about the Xcode 4.2+/ruby problems that are finally starting to get worked out.  Latest update: 9/29/2012</p>
+
+<p>If you run into an error message with <code>Segmentation Fault: Abort Trap 6</code>, the
+issue could be caused by the version of OpenSSL bundled with MacPorts’
+PostgreSQL installer.  Or it could be caused by the updated C compiler included with the latest version of Xcode.  Let&#39;s look at some workarounds to these issues.&lt;!-- more --&gt;</p>
+
+<p>First, the issue with MacPorts&#39; PostgreSQL/OpenSSL distribution.  See the following discussion from the Ruby website:</p>
+
+<p><a href="http://redmine.ruby-lang.org/issues/4373#note-61">http://redmine.ruby-lang.org/issues/4373#note-61</a></p>
+
+<p>The &quot;solution&quot; is to change your ActionMailer settings to not use the library.
+That&#39;s an OK stopgap but it&#39;s a better idea to just get rid of your MacPorts
+install. That&#39;s because I have found that my MacPorts PostgreSQL install has
+gotten borked with each Mac OS 10.7.x update, because Lion has its own
+PostgreSQL database.</p>
+
+<p>I got it working again the first time, but the second time it happened, I
+decided to switch to the <a href="http://mxcl.github.com/homebrew/">Homebrew</a> version, which is insulated against the
+system&#39;s. Therefore, I recommend that if you had installed it from MacPorts on
+Snow Leopard, you should uninstall it before moving to Lion, and install the
+version from Homebrew once your upgrade is complete.</p>
+
+<p>(I&#39;m not sure what Lion uses its built-in PostgreSQL for, if anything.
+However, I did manage to screw up an older installation of Mac OS X by
+experimenting with the built-in MySQL database a couple years back, and while
+I didn&#39;t experience any data loss from that incident, I would rather not risk
+having to waste the time restoring my Lion install. So Homebrew it is.)</p>
+
+<hr>
+
+<p>You may also run into a segmentation fault caused by a screwed-up ruby
+compile. By default some versions of RVM used LLVM to compile new Rubies
+(which currently need to be compiled with gcc) under Lion.</p>
+
+<p>(Read the updates below before following any of these instructions. The best way to do this keeps changing.)</p>
+
+<p>Add this to .bashrc :</p>
+
+<p><code>export CC=/usr/bin/gcc-4.2</code></p>
+
+<p>If you had already installed ruby with LLVM it might still have compiled cache
+files around. In that case use the rvm force command</p>
+
+<p><code>rvm install 1.9.2 --force</code></p>
+
+<h4>Update #1:</h4>
+
+<p>The latest version of RVM has accounted for this issue and automatically exports CC=/usr/bin/gcc-4.2 for you
+(<em>.rvm/scripts/functions/build::line 7</em>). However, merely upgrading RVM won&#39;t
+fix the issue; you still have to rebuild your rubies.</p>
+
+<h4>Update #2:</h4>
+
+<p>The latest notes for RVM carry this warning:</p>
+
+<blockquote>
+<p>** Lion Users: Xcode Version 4.2.x for OS X Lion works only for ruby
+1.9.3-p0 (or higher). It currently fails to build several other rubies and
+gems, as well as several Homebrew and Macports packages. Xcode Version 4.1
+(4B110) works.</p>
+
+<p>Xcode 4.2 users - please be warned - in case of any compilation issues
+downgrade to Xcode 4.1 and reinstall your rubies.</p>
+</blockquote>
+
+<p>Looks like those of us who want to do iOS development as well as Ruby
+development are stuck between a rock and a hard place for the moment.</p>
+
+<h4>Update #3:</h4>
+
+<p>I haven&#39;t been affected by any ruby compilation issues since switching my development
+environment to 1.9.3p0, and I have a pretty common set of gems. So your
+mileage may vary, but if you need to use a newer version of Xcode you should
+definitely try an RVM gemset based on 1.9.3 and see if it clears up the
+trouble.</p>
+
+<h4>Update #4:</h4>
+
+<p>While I still haven&#39;t run into any issues since upgrading to 1.9.3 (knock on wood) - and I&#39;m using the pg driver for PostgreSQL - the latest RVM release notes offer some new solutions:</p>
+
+<blockquote>
+<p>Xcode 4.2:
+ * is only supported by ruby 1.9.3+ using command line flag: --with-gcc=clang
+ * it breaks gems with native extensions, especially DB drivers.</p>
+
+<p>Xcode 4.2 users - please be warned -
+in case of any compilation issues
+ * downgrade to Xcode 4.1
+ * or install osx-gcc-installer
+and reinstall your rubies.</p>
+</blockquote>
+
+<p>Here is the link to <a href="https://github.com/kennethreitz/osx-gcc-installer">osx-gcc-installer</a>.</p>
+
+<p>That bit about the command line flag is a bit cryptic.  He means that when installing a new ruby, use that argument for RVM, like this:</p>
+
+<p><code>rvm install 1.9.3 --with-gcc=clang</code></p>
+
+<h4>Update #5:</h4>
+
+<p>I was forced to upgrade to Xcode 4.3 and as a result I&#39;ve been having a lot of problems with the clang-compiled version of 1.9.3.  The chief issue is that I can&#39;t use ruby-debug-ide with RubyMine, and I find that to be an extremely valuable tool.  Meanwhile, a better solution than osx-gcc-installer has come along, which doesn&#39;t clobber Xcode 4.3&#39;s special Frankenstein version of gcc.  For that, follow <a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/">John Firebaugh&#39;s instructions</a>.  If you are using an IDE, I recommend installing gcc 4.2 and then moving back to ruby 1.9.2 for the time being (or compiling 1.9.3 with gcc - but RVM will automatically add <code>--with-gcc=clang</code> now, so you&#39;ll have to specify your newly installed version of gcc instead using <code>--with-gcc=gcc-4.2</code>).</p>
+
+<h4>Update #6:</h4>
+
+<p>Looks like the kinks are finally worked out.  With Ruby 1.9.3-p194 and Xcode 4.4, I had no issues following the default installation procedures on Mountain Lion.  RubyMine auto-installed the ruby-debug-ide without problems.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2011/11/04/ruby-segmentation-faults-and-abort-trap-6-in-lion-some-solutions/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2011/11/04/ruby-segmentation-faults-and-abort-trap-6-in-lion-some-solutions/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

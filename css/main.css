@@ -1,0 +1,372 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 21px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url("/assets/images/simple_noise.png");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: .95rem;
+    font-weight: 500;
+    text-shadow: 0 1px 1px #FFF;
+}
+
+h3, h4, h5 {
+    margin-top: 1rem;
+}
+
+h4, h5 {
+    margin-bottom: -.8rem;
+}
+
+h5 {
+    font-size: .8rem;
+    font-style: italic;
+}
+
+a {
+    color: #2999CC;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #8D3BC4;
+}
+
+/* Video.js */
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-volume-level { background-color: #2999CC }
+.vjs-default-skin .vjs-control-bar { font-size: .5rem }
+.video-js { margin-top: 1rem }
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+#home {
+    text-align: center;
+}
+
+ul.posts {
+    list-style-type: none;
+}
+
+ul.posts li {
+    margin-top: 1rem;
+}
+
+ul.posts a {
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.list-date {
+    font-size: .8rem;
+    font-style: italic;
+    color: #8b8b8b;
+}
+
+.stackoverflow {
+    background: url("/assets/images/stackoverflow.png");
+    background-size: 119px;
+    display: inline-block;
+    width: 119px;
+    height: 31px;
+    margin-top: -8px;
+    margin-bottom: -1px;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+header {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    text-shadow: 0 1px 1px #FFF;
+    color: #555;
+    font-size: 1rem;
+}
+
+header h1 {
+    display: none;
+}
+
+#nav a {
+    display: block;
+}
+
+#nav a:visited {
+    color: #2999CC;
+}
+
+#pic {
+    background: url("/assets/images/john.png");
+    width: 80px;
+    height: 104px;
+    background-size: 100%;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    body {
+        background-size: 20px;
+    }
+
+    header h1 {
+        font-weight: 100;
+        color: dimgrey;
+    }
+
+    #pic {
+        background: url("/assets/images/john_2x.png");
+        background-size: 100%;
+    }
+}
+
+#share {
+    margin-top: 1rem;
+}
+
+.stripe {
+    width: 100%;
+    height: .25rem;
+}
+
+#topStripe {
+    background: #56B985;
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+#bottomStripe {
+    background: #DF5B31;
+    border-top: 1px solid rgba(0, 0, 0, .15);
+}
+
+.container {
+    margin: auto;
+    max-width: 38rem;
+    min-width: 240px;
+}
+
+.fullWidthImage img {
+    width: 100%;
+    margin-top: .5rem;
+}
+
+.site {
+    padding: 2rem;
+    padding-top: 1.5rem;
+    font-weight: 300;
+    text-align: left;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+
+.margin {
+    height: 2rem;
+    width: 100%;
+}
+
+.site .meta {
+    color: #aaa;
+}
+
+/*****************************************************************************/
+/*
+/* Follow Page
+/*
+/*****************************************************************************/
+
+
+#follow ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    list-style-type: none;
+    display: block;
+    float: left;
+}
+
+#follow h1 {
+    margin-bottom: 1rem;
+}
+
+#follow iframe {
+    display: block;
+    float: right;
+}
+
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+sup {
+    vertical-align: top;
+    position: relative;
+    top: -0.33rem;
+}
+
+p, .gist {
+    margin-top: 1rem;
+}
+
+pre, code, .gist {
+    font-size: .7rem;
+}
+
+ul {
+    margin-top: 1rem;
+}
+
+hr {
+    border-style: none;
+    border-top: 1px solid #888;
+    margin-top: 1rem;
+}
+
+.jsfiddle {
+    margin-top: 1rem;
+}
+
+.post pre {
+    border: 1px solid #ddd;
+    padding: .4rem;
+    margin-top: 1rem;
+    overflow: scroll;
+}
+
+.post ul, .post ol {
+    margin-left: 1.35rem;
+}
+
+.post code {
+    padding: .2rem;
+    background-color: #f9f9f9;
+}
+
+.post pre code {
+    background: none;
+}
+
+#disqus_thread {
+    padding-top: 1rem;
+}
+
+/*****************************************************************************/
+/*
+/* Mobile Layouts
+/*
+/*****************************************************************************/
+
+@media (max-width: 1060px) {
+    header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #555;
+        font-size: 1rem;
+        text-align: center;
+        background: #2999CC;
+        -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #topStripe, #bottomStripe {
+        display: none;
+    }
+
+    #pic {
+        background-size: 80px;
+        width: 32px;
+        height: 33px;
+        background-position-x: 31px;
+        float: left;
+    }
+
+    #nav {
+        float: right;
+    }
+
+    #nav a {
+        display: inline-block;
+        margin-left: .25rem;
+        text-shadow: none;
+        color: white;
+        line-height: 32px;
+    }
+
+    #nav a:visited {
+        color: white;
+    }
+}
+
+@media (max-width: 814px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .site {
+        border-radius: 0;
+        border: none;
+    }
+
+    .margin {
+        height: 1rem;
+    }
+
+    #nav {
+        margin-right: .5rem;
+    }
+
+    #pic {
+        margin-left: .5rem;
+    }
+}
+
+@media (max-width: 339px) {
+    html {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>/usr/bin/ruby: illegal switch in RUBYOPT: -o (RuntimeError)</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>/usr/bin/ruby: illegal switch in RUBYOPT: -o (RuntimeError)</h2>
+
+  <div class="list-date">01 Nov 2011</div>
+</div>
+
+<div class="post">
+  <p>As I&#39;m transitioning most of my code to Ruby 1.9.2 (using RVM to manage my gems), I have been seeing this error a lot:</p>
+
+<p><code>/usr/bin/ruby: illegal switch in RUBYOPT: -o (RuntimeError)</code></p>
+
+<p>Awful isn’t it? What’s happening?
+&lt;!-- more --&gt;
+When you are running Ruby 1.9.2+ in RVM, the RUBYOPT environment variable is
+set to &quot;-r openssl&quot;. This is interpreted by 1.8.7 and below as &quot;-o&quot; which it
+doesn’t understand, of course. The trick is to set RUBYOPT=&quot;&quot;. You can do this
+automatically by pasting the following code ot the END of the
+~/.rvm/hooks/after_use script:
+<code>sh
+if echo $rvm_ruby_version | grep -q &#39;1.9&#39;; then
+  export RUBYOPT=&#39;-r openssl&#39;
+else
+  export RUBYOPT=
+fi
+</code>
+There are some use-cases that require you to run the export command manually, for example when
+you are dealing with Homebrew, which runs on the system Ruby if you use their
+standard install script. In that case just type <code>export RUBYOPT=</code> into the
+command prompt, hit enter, and continue with what you were doing.</p>
+
+<p>See the answer on Stack Overflow: <a href="http://stackoverflow.com/questions/6117302/how-to-set-rubyopt-for-only-specific-rvm-versions">http://stackoverflow.com/questions/6117302/how-to-set-rubyopt-for-only-specific-rvm-versions</a></p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2011/11/01/usrbinruby-illegal-switch-in-rubyopt-o-runtimeerror/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2011/11/01/usrbinruby-illegal-switch-in-rubyopt-o-runtimeerror/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

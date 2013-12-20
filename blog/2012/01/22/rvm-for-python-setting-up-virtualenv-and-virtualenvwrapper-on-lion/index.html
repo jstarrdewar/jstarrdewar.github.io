@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>RVM for Python (setting up virtualenv &amp; virtualenvwrapper on Lion)</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>RVM for Python (setting up virtualenv &amp; virtualenvwrapper on Lion)</h2>
+
+  <div class="list-date">22 Jan 2012</div>
+</div>
+
+<div class="post">
+  <p>If you&#39;re a regular reader of my blog, you know that I use RVM (Ruby Version Manager) to manage gemsets on my computer.  This way, I can have an app running on Rails 3.0 and another on Rails 3.1 and don&#39;t have to worry about gem incompatibilities.  Without RVM, you are stuck with just one set of gems for your entire system, which makes working on more than one app a hassle or worse.  Naturally, this problem is not Ruby-specific, but affects every language that utilizes packages.</p>
+
+<p>Python is one of them, and it&#39;s one you&#39;re likely to need to use at some point.  The Python community (specifically <a href="https://raw.github.com/pypa/virtualenv/master/AUTHORS.txt">these fine people</a>) has developed a tool to manage your environments in Python in a very similar manner to how RVM makes our lives easier in Ruby.  It&#39;s called virtualenv.</p>
+
+<p>On its own, virtualenv defaults to letting you place a &#39;virtual environment&#39; within an arbitrary folder.  So each project folder could, for example, has its own virtual environment or two.  The experience of many Python users has been that this can get a bit disorganized and messy.  This is also a different approach than what us Ruby developers are used to with RVM, where all of the rubies and their gemsets are stored in a central location under <em>~/.rvm</em>.</p>
+
+<p>Eventually, one Doug Hellman decided it would be easier to keep everything in a centralized location and wrote virtualenvwrapper, which helps you manage your virtual environments and switch between them quickly and easily.  Together these two tools are work very much like RVM and make the odd Rubyist feel a lot more comfortable dabbling in Python.  As a bonus, virtualenv will set up pip, (which is a lot like Ruby&#39;s bundler gem) in each environment, saving you the trouble of installing it manually.</p>
+
+<p>Here&#39;s how to get this going in Mac OS X:</p>
+
+<p>First you&#39;ll use easy_install (which is preinstalled in Lion and is a bit like the gem command) to grab virtualenv and virtualenvwrapper:</p>
+
+<p><code>sudo easy_install virtualenv</code></p>
+
+<p><code>sudo easy_install virtualenvwrapper</code></p>
+
+<p>The second command will install virtualenvwrapper.sh into <em>/usr/local/bin/</em>.  You need to update you .bashrc file to load that on startup.  You also need to specify a location to save all of the virtual environments.  Finally you need to tell pip that it should install to the active virtual environment and install to the virtual environments&#39; directory.  Add these four lines to your .bashrc:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+<span class="nb">export </span><span class="nv">PIP_VIRTUALENV_BASE</span><span class="o">=</span><span class="nv">$WORKON_HOME</span>
+<span class="nb">export </span><span class="nv">PIP_RESPECT_VIRTUALENV</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>Now switch to terminal and open a new tab or window.  You should see some output as virtualenvwrapper initializes the .virtualenvs folder.</p>
+
+<p>To create a virtual environment, just do this, with whatever name you wish in place of &#39;myVirtualEnv&#39;:</p>
+
+<p><code>mkvirtualenv myVirtualEnv</code></p>
+
+<p>To see a list of all your virtual environments, just do this:</p>
+
+<p><code>workon</code></p>
+
+<p>To activate one, do this:</p>
+
+<p><code>workon myVirtualEnv</code></p>
+
+<p>You&#39;ll notice that when an environment is active your command prompt will change to reflect that status, e.g. <code>(myVirtualEnv)iMac:~ $</code></p>
+
+<p>Here&#39;s a blog post by Rich Leland with a screencast showing some more tricks you can do with virtualenvwrapper: <a href="http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/">http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/</a></p>
+
+<p>And here is the documentation: <a href="http://www.doughellmann.com/docs/virtualenvwrapper/">http://www.doughellmann.com/docs/virtualenvwrapper/</a></p>
+
+<p>In RVM, we have the ability to cause a specific gemset to load when opening a directory in terminal by saving a .rvmrc file in the project root with the gemset specified on a single line inside like this: <code>rvm use ruby-1.9.3-p0@my_gemset</code></p>
+
+<p>To achieve the same thing with virtualenvwrapper, just paste this into your .bashrc:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">has_virtualenv<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> -e .venv <span class="o">]</span>; <span class="k">then</span>
+<span class="k">        </span>workon <span class="sb">`</span>cat .venv<span class="sb">`</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+venv_cd <span class="o">()</span> <span class="o">{</span>
+    <span class="nb">cd</span> <span class="s2">&quot;$@&quot;</span> <span class="o">&amp;&amp;</span> has_virtualenv
+<span class="o">}</span>
+<span class="nb">alias cd</span><span class="o">=</span><span class="s2">&quot;venv_cd&quot;</span>
+</code></pre></div>
+<p>Then add a .venv file to the project root with the name of its environment, like <code>myVirtualEnv</code></p>
+
+<p>As you can see, this snippet just aliases the cd command and runs a function every time it&#39;s called that checks for a .venv file and then tries to call <code>workon [file contents]</code>.  Thanks to <a href="https://github.com/justinlilly/">Justin Lilly</a> for coming up with it.</p>
+
+<p><strong>Update 9/29/2012</strong>
+Virtual environment support is now built-in to Python beginning with version 3.3.  <a href="http://www.python.org/dev/peps/pep-0405/">More details here.</a></p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2012/01/22/rvm-for-python-setting-up-virtualenv-and-virtualenvwrapper-on-lion/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2012/01/22/rvm-for-python-setting-up-virtualenv-and-virtualenvwrapper-on-lion/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

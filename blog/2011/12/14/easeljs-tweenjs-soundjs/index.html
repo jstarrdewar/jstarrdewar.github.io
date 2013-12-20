@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>EaselJS, TweenJS, SoundJS</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>EaselJS, TweenJS, SoundJS</h2>
+
+  <div class="list-date">14 Dec 2011</div>
+</div>
+
+<div class="post">
+  <p>Grant Skinner has been busy lately, and he has apparently been focusing his
+efforts on HTML5!</p>
+
+<p>The fruits of his labor are some interesting libraries:</p>
+
+<p><a href="http://easeljs.com">EaselJS</a>, a port of the Flash API to the Canvas Element;
+<a href="http://tweenjs.com">TweenJS</a>, a tweening library that is meant to work more
+like the TweenLite/GTween libraries from Flash than the more rudimentary
+system we get from jQuery; and <a href="http://soundjs.com">SoundJS</a>, a sound manager for
+HTML5&#39;s sound API.
+&lt;!-- more --&gt;
+The site has some cute demos, but you should really just jump to the good
+stuff and check out <a href="http://www.pirateslovedaisies.com">Pirates Love Daisies</a>,
+a quite fun tower-defense game made with these three libraries.</p>
+
+<p>If you want to sit back, relax and see how it all works, Lee Brimelow posted a
+short video tutorial here: <a href="http://gotoandlearn.com/play.php?id=152">Introduction to EaselJS</a></p>
+
+<p>I&#39;m not yet convinced that EaselJS is necessary; but I haven&#39;t had a lot of
+experience with Canvas yet due to a lack of a suitable project to tackle it
+with, so maybe if I had, I would be convinced. From my experience so far, I
+think you could get along fine with the Canvas API, but EaselJS does make
+Canvas a lot less intimidating for those of us who do a lot of Flash work.
+It&#39;s similar in that sense to the <a href="http://www.sparrow-framework.org">Sparrow Framework</a>, which ports the Flash API to iOS. (And it bears mentioning
+that Canvas is conceptually the iOS/OS X drawing API ported to JavaScript).</p>
+
+<p>This isn&#39;t the first alternative API to be built for Canvas. There is also
+John Resig&#39;s <a href="http://ejohn.org/blog/processingjs/">Processing.js</a>, which is
+interestingly both a language parser for the processing language and a
+JavaScript drawing API. It&#39;s superficially quite similar to the Flash API, and
+thus the EaselJS API. And it was released in May of 2008! I haven&#39;t seen to
+many people using it; perhaps EaselJS will have better luck (and given that a
+lot of Flash guys are learning HTML5 these days, I&#39;m quite sure it will).</p>
+
+<p>As I said, I haven&#39;t spent a long time with the Canvas API, and that&#39;s because
+every time I&#39;ve been tempted to use it, I&#39;ve been discouraged by performance
+issues. Without GPU acceleration it&#39;s not very good, and on a mobile device,
+it&#39;s terrible/unusable. Luckily, that situation is changing. iOS 5 brought GPU
+acceleration for canvas along with it, and some of the Easel demos work just
+as well on an iPhone 5 as on the computer.</p>
+
+<p>TweenJS is something I&#39;ve been wishing for and event spent a little bit of
+time conceptualizing, thinking I might have time to build it myself. I haven&#39;t
+been motivated to really pursue it because jQuery and CSS3 have been doing
+fine for my animation needs so far in my HTML5 adventures, but there was a
+project I was working on several months ago at Sabertooth that could have
+really used it. At any rate they beat me to it, or good things come to those
+who wait. I&#39;m not sure which.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2011/12/14/easeljs-tweenjs-soundjs/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2011/12/14/easeljs-tweenjs-soundjs/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

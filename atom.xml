@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[John Starr Dewar]]></title>
+  <link href="http://jstarrdewar.com/atom.xml" rel="self"/>
+  <link href="http://jstarrdewar.com/"/>
+  <updated>2013-12-20T11:13:58-08:00</updated>
+  <id>http://jstarrdewar.com/</id>
+  <author>
+    <name><![CDATA[John Starr Dewar]]></name>
+  </author>
+  <generator uri="http://jekyllrb.com//">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A better answer for: "Is it possible to animate scrollTop with jQuery?"]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/12/19/stack-overflow-better-way-to-animate-window-scroll-top/"/>
+    <updated>2013-12-19T22:58:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/12/19/stack-overflow-better-way-to-animate-window-scroll-top</id>
+    <content type="html"><![CDATA[<p>My answer to a question on Stack Overflow: <a href="http://stackoverflow.com/a/20699124/1084434">http://stackoverflow.com/a/20699124/1084434</a></p>
+
+<p>I found that the generally accepted solution of writing <code>$(&#39;html, body&#39;).animate({scrollTop: 100px})</code> led to unexpected results when using the <code>step</code> callback.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing Adhesive]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/11/14/introducing-adhesive/"/>
+    <updated>2013-11-14T08:16:12-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/11/14/introducing-adhesive</id>
+    <content type="html"><![CDATA[<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/adhesive-712x191-20fede.jpg"></span>
+<span data-src="/generated/adhesive-1390x372-20fede.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/adhesive-712x191-20fede.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>I have just pushed version 1.0 of my minimalist JavaScript build tool, <a href="https://github.com/jstarrdewar/adhesive">adhesive</a>.  I&nbsp;originally created adhesive well over a year ago to support my World of the Borgias project, and released the initial version on npm about 8 months ago.</p>
+
+<p>Adhesive&#39;s raison d&#39;être is that I often find myself inheriting projects that simply list their javascript dependencies as script tags in the head or body element.  I wanted a quick and easy way to build a concatenated, minified file to replace the tag soup and improve page loading performance.  I also wanted a tool that supported source maps so that I could easily debug the combined JavaScript.  Nowadays, Grunt provides a very robust solution, but its power and extensibility could be overkill — I needed something that wouldn&#39;t intimidate junior programmers.</p>
+
+<p>Adhesive also provides support for using Uglify to strip console.log statements from the minified script with global definitions <a href="http://jstarrdewar.com/blog/2013/02/28/use-uglify-to-automatically-strip-debug-messages-from-your-javascript/">as described in this post</a>.</p>
+
+<p>To install adhesive, make sure you have Node.js installed, then run:</p>
+
+<p><code>npm install -g adhesive</code>.</p>
+
+<p>You must provide a JSON configuration file, which I recommend naming <code>build.json</code></p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"> <span class="p">{</span>
+     <span class="nt">&quot;sourceRoot&quot;</span><span class="p">:</span><span class="s2">&quot;src&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;sources&quot;</span><span class="p">:[</span>
+         <span class="s2">&quot;vendor/swipe.js&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;vendor/PxLoader.js&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;vendor/PxLoaderImage.js&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;main.js&quot;</span>
+     <span class="p">],</span>
+     <span class="nt">&quot;outputPath&quot;</span><span class="p">:</span><span class="s2">&quot;js/main_built.js&quot;</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>After that it&#39;s easy.  Passing the <code>--debug</code> flag generates a source map as well:</p>
+
+<p><code>adhesive build --debug</code></p>
+
+<p>You can find out more about the project by viewing the README on <a href="https://github.com/jstarrdewar/adhesive">Github</a> or <a href="https://npmjs.org/package/adhesive">npm</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What Would a 4K Rift Look Like?]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/11/02/what-would-a-4K-rift-look-like/"/>
+    <updated>2013-11-02T04:56:10-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/11/02/what-would-a-4K-rift-look-like</id>
+    <content type="html"><![CDATA[<p>I’ve been stewing on the idea of a retina VR display, and I got interested in finding out what it would look like, and if the optics of the Oculus Rift become a limiting factor.</p>
+
+<p>I had an idea: I can’t get ahold of a super-high resolution display, but my printer is certainly capable of producing much sharper images than the current Rift.  So I decided to try printing out a high resolution rendering to see if I could make my own retina Rift.</p>
+
+<p>I used modo for the render, with a sample scene from the object library.  I used the standard 3D camera mode with barrel distortion and a 115-degree FOV, which is what I normally see in the Rift with my C cups.  The distortion in modo is not quite the same as the correction that the Oculus SDK provides, but it’s close enough to work for this experiment.  I incorporated a screenshot of this blog taken while operating in retina mode (this was back before the redesign).</p>
+
+<p>Getting the images to line up properly was a bit of a challenge.  First I rendered at 1280x800 and used fullscreen mode in Photoshop to preview it on the Rift.  I created guides in photoshop 64mm apart and centered each side of the image over them.  By default, modo will put the images fully side-by-side, but to create an image for the Rift, you need to cut some of the area out of both images between the eyes.  Interestingly, my eyes are 66mm apart but when I tried putting the image centers 66mm apart rather than 64mm, I could not resolve a 3D image, even after adjusting the camera separation in modo as well.</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/modo_rift_render-712x445-5ac492.jpg"></span>
+<span data-src="/generated/modo_rift_render-1280x800-5ac492.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/modo_rift_render-712x445-5ac492.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>I rendered the image at 12800x8000 pixels, which works out to about 2171 ppi at the size of the Oculus display.  I figured that would be approximately retina quality, since the screenshot was at about the same resolution in the center of the image.</p>
+
+<p>Unfortunately, that high resolution was too high for my printer.  It maxes out at only 600 dpi.  Even at that resolution, it turns out, the real resolution limit is the grain of the paper.  Still, that’s about 3500 dots across, so very nearly a simulation of a 4K display.  I carried on.  If you happen to have a printer capable of a much higher resolution and want to follow along, you can <a href="https://s3.amazonaws.com/jstarrdewar.com.bucket/rift_retina_test_huge.jpg">download the full-sized 12.8K image here</a> and follow along.</p>
+
+<p>Next, I needed to take a look at my creation through the C cups.  My first idea was to try stuffing the print through the hole where the cups attach and using a plain white background as a backlight.  This worked OK, but the screen door was apparent and made it difficult to see any additional resolution.  The other problem was that once I cut the print in half, I had a terrible time getting it lined up properly again.</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/rift_print_inside-712x471-a1b09e.jpg"></span>
+<span data-src="/generated/rift_print_inside-1424x942-a1b09e.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/rift_print_inside-712x471-a1b09e.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>I decided my next approach would be to make a cardboard Rift.  I sacrificed a nearly empty box of checks to the cause.  The problem with this approach was that I could not get adequate light into the box and it was too hard to see.</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/cardboard_oculus-712x534-7fb7ce.jpg"></span>
+<span data-src="/generated/cardboard_oculus-1424x1068-7fb7ce.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/cardboard_oculus-712x534-7fb7ce.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>Finally I resorted to just holding the eyecups above the print, one in each hand.  I had to hold really still but at last I was able to reach some conclusions.</p>
+
+<p>First was the ooh-ahh moment; the depth that you can perceive in the image is tied very closely to the overall resolution.  With this high-res render, I could perceive far greater depth.  That will make games that try to play on fear of heights, like <a href="https://share.oculusvr.com/app/aaaaaaaaaaaaaaaaaaaaculus">AaaaaAAaaaAAAaaAAAAaCULUS!!!</a>, much more impactful.</p>
+
+<p><a href="http://www.booncotter.com/some-preliminary-vr-metrics/#comments">Boon Cotter tried to calculate what the actual maximum depth that can be seen</a> in the Rift is and came up with 300m — but in my personal experience it&#39;s much less than that.  In real life I can perceive stereo separation up to at least 800m (Boon&#39;s calculations were that the maximum possible would be 745m, but as a commenter pointed out there&#39;s a lot of subtlety to the human vision system which makes it hard to determine the answer with simple trigonometry).</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/through_the_looking_glass-712x534-7eb2a5.jpg"></span>
+<span data-src="/generated/through_the_looking_glass-1424x1068-7eb2a5.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/through_the_looking_glass-712x534-7eb2a5.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>It looks like a 600 ppi display is really about the limit of the eye cup lens optics that came with the dev kit.  Obviously I’m not correcting for chromatic aberration but I don’t think it would be possible to correct for the amount of smearing that occurs around the edge of the frame, something that you really don’t notice in the current rift.</p>
+
+<p>The result is that the block of text in the center of the “screen” is quite legible — impressive considering how <em>illegible</em> text on the current headset can be — but the list of recent posts could only be read when hovering directly over it with the eye cup.</p>
+
+<p>I had a chance to ask Palmer Luckey about this directly, and he said that the general optical configuration of the rift can avoid monochromatic aberrations all the way up to retina resolutions.  However, the optics have to made with that resolution in mind.  Oculus now has experts on staff who know how to make these kinds of specific optimizations.  However, we shouldn&#39;t expect the optics to be optimized for resolutions higher than the screen.  The sharper the screen, the more expensive the lenses get, because the manufacturing process and materials must be changed.</p>
+
+<p>Palmer also said that the optics on the upcoming 1080p rift will be considerably better than on the current rift.  In my ten-minute experience with the 1080p rift samples that have been making the rounds lately (and use the current optics) I wasn&#39;t able to discern any major shortcomings.  However I know that with my personal dev kit, I do notice some issues if I go looking for them, especially because my eyes are not exactly 64mm apart which means I can only get the image at optimal clarity in one eye or the other.</p>
+
+<p>(I know about the <a href="http://www.shapeways.com/shops/vrgear">IPD Adjuster from VR-Gear</a>, but I use the C cups so I need to find another solution).</p>
+
+<p><strong>Update:</strong> <a href="http://www.reddit.com/r/oculus/comments/1q1gvc/what_would_it_be_like_to_look_through_a_4k_rift_i/cd8ac8b">Palmer commented on reddit</a> and suggested using a window as a backlight for the checkbox *slaps forehead*. Here&#39;s my response:</p>
+
+<p>&quot;Hey Palmer, thanks for reading! I did the experiment in the middle of the night, but I just gave your suggestion a go:
+My windows are all filthy which actually is quite an issue because the dust spots interfere with the image. A light table would definitely be the best solution. My dad has one in a closet somewhere so I&#39;ll have to dig it out next time I visit.</p>
+
+<p>Something I noticed when trying to use the rift backlight: the paper grains show up strongly in the backlight and are somewhat larger than the dots of ink.</p>
+
+<p>Overall a bit easier than holding the lenses by hand though. If I ever get ahold of a better printer, a light table, and better paper (oh, and maybe even your new and improved optics) I&#39;ll give it another go.&quot;</p>
+
+<p>I also had the idea on the reddit thread that one might be able to print on Glass like <a href="http://www.fractureme.com">Fracture</a>, but according to their website they print at 400 ppi.</p>
+
+<p><strong>Update 2:</strong> Palmer suggested using an overhead transparency film for inkjets.  The guy ain&#39;t just pretending to be smart.</p>
+
+<p><em>Related Posts:</em></p>
+
+<p><a href="/blog/2013/01/26/the-promise-of-a-retina-vr-display/">The Promise of a Retina VR Display</a></p>
+
+<p><a href="/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness/">Motion Tracking Goes a Long Way Towards Eliminating VR Sickness</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Motion Tracking Goes a Long Way Towards Eliminating VR Sickness]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness/"/>
+    <updated>2013-10-23T13:56:10-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness</id>
+    <content type="html"><![CDATA[<p>VR sickness is one of the effects of using the Oculus Rift that caught me by surprise.  I’d heard about it from others but didn’t think I would be susceptible.  I never get seasick, carsick or airsick, and I’ve only ever vomited as a result of run-ins with the norovirus.  However, I have found that the Rift can make me feel like heaving in no time.</p>
+
+<p>Now, people have claimed that tracking body position with the Razer Hydra largely eliminates VR sickness.  ‘Teddy’ is a big proponent of this.  You can check out his work <a href="http://www.youtube.com/watch?v=u-92rvc_Y-E">here on YouTube</a>.</p>
+
+<p>For myself, playing the Teddy’s HydraDeck demos didn’t totally eliminate VR sickness so I wasn’t sure how effective the technique really is (HydraDeck adds mechanics where you have to physically bend down to reach golden orbs, so it’s pushing the envelope a bit).  Then last night I tried out the <a href="http://vrmods.wordpress.com/">latest Half Life VR demo</a>.  </p>
+
+<p>At first I tried playing in <code>mt_control_mode 0</code>, which doesn’t have positional tracking.  Instead you hold a hydra controller in each hand.  Now it should be said that of all the Rift demos I’ve tried, Half Life 2 makes me sick the fastest, and this time was no different, although the mod gets rid of some of the more egregious problems like the loading freeze-frames which were extremely disorienting before.  I had to take the rift off after about 15 minutes and recover.</p>
+
+<p>Next, I tried <code>mt_control_mode 2</code>.  In this version, all of the controls are mapped to the right controller, and you wrap the left controller around your neck to provide positional tracking.  The positional tracking effect is pretty subtle.  Unless you explicitly stop and lean around corners to enjoy the effect, you won’t notice it.  I certainly didn’t while being pursued through the railyard by the police.  Yet it made a tremendous difference in how I felt.  This time I played for about 45 minutes and felt fine when I took off the rift.</p>
+
+<p>The mod promotes Half Life 2 from the bottom of my favorite Rift demos list to near the top.  There are still some issues, of course.  It’s difficult to attach the hydra and it needs to be somewhat level or else your forward direction drifts too rapidly.  I couldn’t entirely get rid of the directional drift either, and when the Hydra direction gets out of sync with the Rift’s positional tracker your leaning direction gets out of whack, and that makes you feel very strange indeed.  We’ll probably have to wait for the STEM or even the next version of the rift to resolve this issue for good.</p>
+
+<p>In <a href="http://www.pcworld.com/article/2053682/oculus-rift-team-talks-steam-support-hamster-balls-and-90s-vr-at-indiecade.html">this recent PCWorld interview</a>, Nate Mitchell said that the consumer Rift would launch with an emphasis on cockpit games, and that makes sense; they are a lot more gentle on VR newcomers, and making your customers sick on Christmas morning is bad business.  </p>
+
+<p>The good news is that Half Life VR proves that it’s possible to make a playable First-Person Shooter that can be enjoyed by people who are not extremely acclimatized to VR.  The trouble is that if it requires an additional $300 investment in a STEM tracker, it may limit the audience too much to make an addressable market in the near term.</p>
+
+<p>(In a <a href="http://www.polygon.com/2013/10/17/4850272/oculus-ceo-gets-sick-from-vr-but-says-hes-found-the-remedy">recent interview with Brendan Iribe on Polygon</a> it was revealed that a prototype Rift with positional tracking is working very well.  According to John Carmack in <a href="http://www.engadget.com/2013/10/18/oculus-rift-john-carmack-interview/">yet another interview</a> – in the video at 3:30 – the final Rift will utilize optical tracking rather than electromagnetic tracking like the STEM and hydra.)</p>
+
+<p>Related Posts: <a href="/blog/2013/01/26/the-promise-of-a-retina-vr-display/">The Promise of a Retina VR Display</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I've Redesigned My Blog Again]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/10/12/ive-redesigned-the-blog-again/"/>
+    <updated>2013-10-12T11:59:35-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/10/12/ive-redesigned-the-blog-again</id>
+    <content type="html"><![CDATA[<p>For its second anniversary, I’ve redesigned my blog. Now it’s a pure Jekyll site. I felt like I didn’t need all of Octopress’ features since most people are hitting the site from Google.  Some of the features broke and I didn’t feel like upgrading them. I wanted something minimal – even utilitarian – yet cheerful. </p>
+
+<p>I’ve upped the font size to make the site a more “correct” from a typographical standpoint. I found the all-white page of the previous design a bit too blinding on my 27” monitor so I’ve made the background light gray. I think you can tell when an engineer designed a website because they’ll do it in shades of gray for the sake of their poor tired eyes. Well, I guess I’m no different in that regard. I hope you enjoy the new&nbsp;look!</p>
+
+<p>If you’re looking for an awesome full-featured Octopress theme for a geeky developer blog, I almost decided to use the Bootstrap 3 theme available here: <a href="https://github.com/kAworu/octostrap3">Octostrap 3</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Try This When UIView Animations Don't Work]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/05/24/try-this-when-uiview-animations-dont-work/"/>
+    <updated>2013-05-24T21:45:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/05/24/try-this-when-uiview-animations-dont-work</id>
+    <content type="html"><![CDATA[<p>Sometimes when you set up an animation in a UIView that you want to run as soon as the view is displayed, you&#39;ll encounter an issue where the animation doesn&#39;t run and proceeds to its completed state without any delay.</p>
+
+<p>For example, take the following code:</p>
+<div class="highlight"><pre><code class="objective-c language-objective-c" data-lang="objective-c"><span class="p">[</span><span class="n">UIView</span> <span class="n">animateWithDuration</span><span class="o">:</span><span class="mf">0.25</span> <span class="n">animations</span><span class="o">:^</span><span class="p">{</span>
+    <span class="n">_buttonView</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">CATransform3DMakeScale</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="n">completion</span><span class="o">:^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">finished</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;animation complete&quot;</span><span class="p">);</span>
+<span class="p">}];</span>
+</code></pre></div>
+<p>In this case what often happens is that the button will disappear instantly instead of showing the 0.25 second animation.  Confusingly, it also displays the log message after 0 seconds. There is no delay happening at all.  Why are our perfectly clear instructions being ignored?</p>
+
+<p>Worse yet, this problem is often intermittent.  Sometimes it will work fine, and other times it won&#39;t.  You may even be able to solve the issue by adding a delay with the <code>animateWithDuration: delay: options: animations: completion:</code> method.  But how can you know how long to make the delay?  On slower devices it may have to be longer.</p>
+
+<p>So here&#39;s what&#39;s really going on: Core Animation is making a decision for  you. If the view is not in the view hierarchy, it should not waste cycles animating.  Furthermore, the animation should not ever start midway through (that would look bad, right?).  So it forces any offscreen animations to immediate completion.</p>
+
+<p>How do you solve this?  It&#39;s very simple: since your view is almost certainly being managed by a controller, just make sure that you do not try to run any animations before the UIViewController&#39;s <code>viewDidAppear:</code> method is called (and make sure the view has been added to the hierarchy with <code>[view addSubview:]</code> or similar).</p>
+
+<p>You could also check if the view has a superview, but it would be a lot tricker; the superview itself may not have a superview yet, and if there is no superview you will need to set a timer to check again.  Too much work in my book.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android ListView Refresh Single Row]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/05/09/stack-overflow-android-listview-refresh-single-row/"/>
+    <updated>2013-05-09T02:31:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/05/09/stack-overflow-android-listview-refresh-single-row</id>
+    <content type="html"><![CDATA[<p>My answer to a question on Stack Overflow: <a href="http://stackoverflow.com/a/16453407/1084434">http://stackoverflow.com/a/16453407/1084434</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A valid provisioning profile for this executable was not found... (again)]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/05/02/stack-overflow-a-valid-provisioning-profile-for-this-executable-was-not-found/"/>
+    <updated>2013-05-02T23:21:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/05/02/stack-overflow-a-valid-provisioning-profile-for-this-executable-was-not-found</id>
+    <content type="html"><![CDATA[<p>My answer to a question on Stack Overflow: <a href="http://stackoverflow.com/a/16349300/1084434">http://stackoverflow.com/a/16349300/1084434</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use Salted Meat Instead Of Soy Sauce For Better Fried Rice]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/03/16/use-salted-meat-instead-of-soy-sauce-for-better-fried-rice/"/>
+    <updated>2013-03-16T22:33:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/03/16/use-salted-meat-instead-of-soy-sauce-for-better-fried-rice</id>
+    <content type="html"><![CDATA[<p>I thought it might be nice to take a break from my regularly scheduled programming and share with you a great insight I&#39;ve had recently about fried rice.  Here in America, fried rice usually brings to mind Panda Express and a steam pan of dried-out white rice turned brown by the addition of soy sauce.  In my younger days I would always opt for it because I thought white rice was boring, but it&#39;s never been that appetizing.<sup>1</sup></p>
+
+<p>Oddly, in the five months I spent in China, I never came across fried rice, so my conception of it never evolved beyond the Panda Express version.  Then a few weeks ago at a restaurant<sup>2</sup> in the San Gabriel Valley, I was served this bowl of fried rice:</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/fried_rice-712x530-d569f0.jpg"></span>
+<span data-src="/generated/fried_rice-837x623-d569f0.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/fried_rice-712x530-d569f0.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>It was a revelation!  No soy sauce whatsoever.  It was moist and ten times as delicious as the slop I&#39;d been eating at Panda.  The secret, as it turned out, was that the rice was dotted with tiny cubes of salted pork.  That mixed with sliced scallions and tossed with oil in a wok for a couple minutes was a big draw for this restaurant, eulogized on Yelp and ordered at every table.</p>
+
+<p>Shortly thereafter I accidentally bought some 塩鮭 at a Japanese supermarket.  That is, salted salmon.  (It&#39;s not my fault; in English it was only labeled &quot;Salmon&quot;.  It&#39;s usually latinized as some variation on shioyake, shiojake, or shiozake.)  At any rate, it&#39;s intensely salty.  Unable to eat it as I had originally intended, I realized that it would be the perfect ingredient for a fried rice dish inspired by my earlier experience.  Hence the following recipe was born:</p>
+
+<h4>Salmon Fried Rice</h4>
+
+<h5>Ingredients (2 servings)</h5>
+
+<ul>
+<li>Japanese Salted Salmon or Chinese Salted Pork (4 oz or less)</li>
+<li>cooked white rice (measured as 2 cups before cooking);</li>
+<li>scallions (to taste, probably at least 3 of them)</li>
+<li>edamame and/or peas (to taste, optional)</li>
+<li>1 or 2 eggs, scrambled (optional, cook them separately!)</li>
+</ul>
+
+<h5>Instructions</h5>
+
+<ol>
+<li><p>Cook the rice.<sup>3</sup></p></li>
+<li><p>When the rice is done, cook the salmon until it flakes easily.  Remember that it will keep cooking after you take it off the heat, so aim for it to be slighly undercooked when you do. (I just throw it in the microwave for about a minute on high). Flake the salmon into a bowl.</p></li>
+<li><p>Heat up a pan and scramble the eggs.  Make sure the pan is clean afterwards, get rid of anything stuck to it before you proceed.</p></li>
+<li><p>Oil the pan.  I use a combination of Peanut Oil (or Canola Oil) and a dash of Sesame Oil for aroma and flavor.  A tablespoon or oil is really probably enough depending on your pan, it&#39;s plenty for a nicely seasoned wok.  Heat it until the oil smokes.</p></li>
+<li><p>Dump in the rice and break it up in the pan, then add the rest of the ingredients.  Mix everything together and stir-fry for a minute or two, until you get everything distributed and are satisfied with the rice.  Some people like it drier, I like mine to stay moist.  You aren&#39;t going for color in this case.</p></li>
+<li><p>Do not add soy sauce!  You will regret adding anything salty to this, that salmon is intense!</p></li>
+<li><p>Serve and eat.</p></li>
+</ol>
+
+<hr>
+
+<p><sup>1.</sup> When I was growing up, white rice was a side dish, and my parents would spread butter on top (!)  ...as a result I wasn&#39;t clued in to the fact that rice is supposed to be the main course, flavored by the sauces of the side dishes, until I went to study abroad in China.  Now I always order white rice.</p>
+
+<p><sup>2.</sup> Shanghai No. 1 Seafood, 250 West Valley Blvd, San Gabriel, CA 91776</p>
+
+<p><sup>3.</sup> If you don&#39;t have a rice cooker, you need one.  It&#39;s life changing.  You don&#39;t really need a blender, food processor, toaster oven, waffle iron, or one of those stupid garlic choppers, but a rice cooker is as essential an item as a microwave.  Trust me.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Access Component Libraries in IntelliJ IDEA or Flash Builder]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/03/07/access-component-libraries-in-intellij-or-flash-builder/"/>
+    <updated>2013-03-07T12:36:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/03/07/access-component-libraries-in-intellij-or-flash-builder</id>
+    <content type="html"><![CDATA[<p>If you find yourself stuck writing a complicated Flash Banner, you will run into a minor inconvenience: most of the ad networks package their api up into .mxp components.  You load them into Flash via the Adobe Extension Manager.  </p>
+
+<p>That means that if you wish to use IntelliJ IDEA or Flash Builder to edit your code, you have to put up with them complaining about missing classes and a lack of code completion.  Or does it?</p>
+
+<p>An .mxp file for Flash is just a collection of swcs and/or as3 files.  When the .mxp file is installed, Extension Manager copies those files into your Application Support folder.  </p>
+
+<p>The folder locations for various platforms are mentioned in this <a href="http://help.adobe.com/en_US/flash/cs/extend/WS5b3ccc516d4fbf351e63e3d118a9024f3f-7fe8.html">Adobe Support Document</a>:</p>
+
+<p><strong>Mac OS X:</strong><br/>
+<code>~/Library/Application Support/Adobe/Flash CC/language/Configuration/Components/</code></p>
+
+<p><strong>Windows 7:</strong><br/>
+<code>C:\Users\USERNAME\AppData\Local\Adobe\Flash CC\language\Configuration\Components\</code></p>
+
+<p><strong>Windows Vista:</strong><br/>
+<code>C:\Users\USERNAME\Local Settings\Application Data\Adobe\Flash CC\language\Configuration\Components\</code></p>
+
+<p><strong>Windows XP:</strong><br/>
+<code>C:\Documents and Settings\USERNAME\Local Settings\Application Data\Adobe\Flash CC\language\Configuration\Components\</code></p>
+
+<p>Thanks to <a href="http://productforums.google.com/forum/#!topic/doubleclick-rich-media/g_edWvoFP40">Jarrod Cope over in the Google Product Forums</a> and &quot;bvb&quot; down in the comments on this page, for letting me know the locations on OS X and Windows before I was able to find that support document!</p>
+
+<p>Just add the library to your IDE of choice, et voilà!  Here is a screenshot of the DoubleClick Studio swc files loaded into IntelliJ:</p>
+
+<p class="fullWidthImage">
+    <img src="/assets/images/2013_03_07/intellij_project_structure_doubleclick_swc.gif">
+</p>
+
+<p>Success!</p>
+
+<p class="fullWidthImage">
+    <img src="/assets/images/2013_03_07/doubleclick_swc_success.gif">
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use UglifyJS To Automatically Strip console.log() From Your Production JavaScript]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/02/28/use-uglify-to-automatically-strip-debug-messages-from-your-javascript/"/>
+    <updated>2013-02-28T23:52:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/02/28/use-uglify-to-automatically-strip-debug-messages-from-your-javascript</id>
+    <content type="html"><![CDATA[<p>Oftentimes, you want to include a lot of <code>console.log()</code> statements while you are developing your app.  Most of these will be removed before deployment, but it isn&#39;t always convenient to remove all of them.  There are useful messages that illuminate what&#39;s happening, like log statements in AJAX responses and module initializations.  If you remove them all and a bug is discovered in your production code, you&#39;ll have to go and put them back in – that&#39;s not staying very DRY.</p>
+
+<p>Of course, you could just leave the <code>console.log</code> statements in the code.  There are two problems with that. The first problem is Internet Explorer.  In IE 8, <code>console</code> is only defined when the Developer Tools panel is open.  (That just seems like a cruel trick; you won&#39;t see any errors caused by missing <code>console</code> objects when you open the dev tools to find out why your code doesn&#39;t work.)  You can get around that by including your own <code>console</code> shim.  One is included in HTML5 Boilerplate.  </p>
+
+<p>That brings us to problem #2.  There is a performance cost to having the browser catching log events.  Usually this won&#39;t really make any appreciable difference, unless you have a log message in a big loop somewhere, but it&#39;s something to be aware of.</p>
+
+<p>If you have a minification step, UglifyJS will afford you a better solution. The following technique is now pretty clearly documented in the UglifyJS ReadMe.  Yet perhaps because it was a bit confusing before, most people that I know weren&#39;t aware that you could do this.</p>
+
+<p>The trick is that you can define constants while minifying.  For example, this command...</p>
+
+<p><code>uglifyjs --define DEBUG=false &quot;main.js&quot; &gt; &quot;main.min.js&quot;</code></p>
+
+<p>...Adds a temporary constant called DEBUG that evaluates to false. So if in your code you write...</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">DEBUG</span> <span class="o">===</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="nx">DEBUG</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// will be removed</span>
+
+<span class="kd">function</span> <span class="nx">doSomethingCool</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">DEBUG</span> <span class="o">&amp;&amp;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;something cool just happened&quot;</span><span class="p">);</span> <span class="c1">// will be removed</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>...The log message line will be removed by Uglify&#39;s dead-code remover (since it will erase any conditional that will always evaluate to false).  So will that first conditional.  But when you are testing as uncompressed code, DEBUG will start out undefined, the first conditional will set it to true, and all your console.log() messages will work.</p>
+
+<p>There is a new version of UglifyJS now called UglifyJS2.  Its behavior is a bit different.  In order to get the dead-code remover to work, you have to activate the compressor.  So the command is now:</p>
+
+<p><code>uglifyjs --compress --define DEBUG=false main.js -o main.min2.js</code></p>
+
+<p><em>Related Posts:</em></p>
+
+<p><a href="/blog/2013/11/14/introducing-adhesive/">Introducing Adhesive</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[An Example Using jQuery UI Draggable with Metafizzy's Isotope Plugin]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/02/24/an-example-using-jquery-ui-draggable-with-metafizzys-isotope-plugin/"/>
+    <updated>2013-02-24T13:19:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/02/24/an-example-using-jquery-ui-draggable-with-metafizzys-isotope-plugin</id>
+    <content type="html"><![CDATA[<div class="jsfiddle">
+    <iframe width="100%" height="600" src="http://jsfiddle.net/jstarrdewar/Avmmr/81/embedded/result,js,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+
+<p>My first and most-popular article on this blog dealt with extending jQuery UI Draggable to make it work with Metafizzy&#39;s Isotope Plugin in Firefox.  You can read it here: <a href="http://jstarrdewar.com/blog/2011/10/28/extend-jquery-draggable-to-work-with-isotope/">http://jstarrdewar.com/blog/2011/10/28/extend-jquery-draggable-to-work-with-isotope/</a>  </p>
+
+<p>This is actually no longer necessary – the bug in Firefox has been fixed – but I still have been getting a lot of requests for a working example.  Here it is.</p>
+
+<div id="disqus_thread"></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Repeat Yourself]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/02/02/dont-repeat-yourself/"/>
+    <updated>2013-02-02T23:52:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/02/02/dont-repeat-yourself</id>
+    <content type="html"><![CDATA[<p>One of the most important tenets of computer programming is the DRY principle. “DRY” stands for “Don’t Repeat Yourself” and it’s a very powerful concept once mastered.  Avoiding repetition in code is critical to the goal of eliminating errors from the system and making it easy to maintain.  If the same lines of code are repeated throughout an application, when the system needs to be changed, all of those copies will have to be updated.  It’s often in this updating process when a small mistake or typo creeps in that will take many hair-rending hours to find later on.</p>
+
+<p>For programmers, identifying code that is not DRY is a good way to start in the refactoring process.  Refactoring means taking a unit of code and rewriting it without changing its functionality.  When undertaking a long-term project it is critical to refactor and to refactor often.  When suboptimal code is left for too long it creates big roadblocks in the future when developers return to add a new feature.  Therefore you should always leave extra room in your budget and schedule for refactoring.</p>
+
+<p>The DRY principle extends beyond the realm of computer programming.  Even non-engineers can benefit greatly from it.  Have you ever used a template to add common formatting to a document?  Have you ever used “Find and Replace”?  Then you have been following the principle.  </p>
+
+<p>There is a lot of software available that can help you stay DRY:  Apple provides Automator in Mac OS.  Photoshop has an “Actions” palette that can save you hours of tedium.  Learning to use these tools will give you a big leg up on the average Joe who contents himself with carefully repeating a task over and over again all day, unwittingly transforming himself into an expensive and unreliable machine.</p>
+
+<p>Unfortunately, staying DRY isn’t always easy.  It requires programmers to stop and think critically about the work that they’ve done.  It takes discipline to rework sections of code that work just fine but contain a lot of excess duplication.  While there are tools available that can find code that bears too much repetition, fixing the problem requires a degree of skill and planning that a computer does not begin to possess.  </p>
+
+<p>DRY is not a panacea; it’s important to understand that it won’t necessarily speed up a project, especially in the short run.  Maintaining coding standards instead should be thought of as an investment in the future of your application.</p>
+
+<h4>Tools We Use at The Code Builders</h4>
+
+<p>There are some important tools we use to help keep our code DRY.</p>
+
+<h5>CSS Preprocessors</h5>
+
+<p>Although the CSS language for describing the appearance of HTML is concise and easy to understand, it requires a lot of duplication.  For example, it lacks variables so one can’t define a color like “header-blue” and expect to use it throughout the document.  Instead, one must write in the hexadecimal code that represents the color over and over again.</p>
+
+<p>CSS preprocessors solve this problem by adding sorely-needed features to CSS.  The two most popular preprocessors are SASS and LESS, which are extremely similar to one another.  We use whichever is most convenient for the project at hand.  When the site is ready to deploy, the tool outputs standard CSS.  A nice bonus is that the preprocessor can compact the output so that it loads faster than it would if it was handwritten CSS.</p>
+
+<h5>Package Managers</h5>
+
+<p>It’s a lot of effort to find libraries needed for a project, download them into the project folder, and then keep them up-to-date as the various teams that maintain them bring out new versions.  Fortunately, a popular application called Bundler has inspired a new generation of package managers for all of our favorite languages.</p>
+
+<p>In PHP we use Composer; in Objective-C, Cocoapods.  JavaScript has npm, which was built for Node.js on the server, and Yeoman, which Google released last month and looks like a very promising tool for front-end development.</p>
+
+<p>Hopefully this brief introduction to the DRY principle has illuminated some of the problems that software engineers face, and some of the solutions available to them.  It may be counterintuitive, but it often takes longer to write concise code than it does to write thousands of lines of less-carefully constructed programming.  However, it is well worth the extra effort.  </p>
+
+<p>As a client, you should always insist on quality over quantity because code will be read many more times than it is written. Any time saved up front with shoddy coding will be lost at the end of the project as the system becomes more complicated and difficult to understand.  Keeping the code DRY helps mitigate stress around deadlines, and will lead to better results and a happier working relationship.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Promise of a Retina VR Display]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2013/01/26/the-promise-of-a-retina-vr-display/"/>
+    <updated>2013-01-26T21:52:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2013/01/26/the-promise-of-a-retina-vr-display</id>
+    <content type="html"><![CDATA[<p>By the end of the decade, products like the <a href="http://www.oculusvr.com">Oculus Rift Head-Mounted Display</a> could breathe new life into the PC business.  I say this because I see great potential in the device for a whole new kind of computing experience.  I think its utility could go far beyond games: it could replace our existing screens and monitors for day-to-day computing.</p>
+
+<p>I’m not alone in imagining this future.  In fact, I recently found out about a proof-of-concept called Ibex that you can run on your Mac or Linux machine.  You can download it here: <a href="http://hwahba.com/ibex/">http://hwahba.com/ibex/</a></p>
+
+<p>The developer, Hesham Wahba, has ideas about this very similar to mine.  I think that one of the big advantages of this would be to be able to set a “desktop” that’s actually a fully 3D environment of some sort.  I think that would be far more pleasant than the current experience of sitting in a cubicle or bedroom all day.  Imagine an alpine meadow or a tropical beach.  I personally would like to spend my workday in Rivendell.</p>
+
+<p>Since I live in Southern California, I often work outdoors on my laptop, but it creates a lot of additional eyestrain.  The light-levels outside are very high, and sunglasses interfere with being able to see the screen very well.  It’s workable, but not ideal.  Indoors during the day I face similar problems.  The way my iMac is situated it tends to catch a reflection of the kitchen window in the glass.  Drawing the blinds is simply depressing.</p>
+
+<p>If you’re using a HMD, no matter where you are or what time of day it is you could potentially block out all the sources of light that might be distracting or tiring.  Another possible advantage would be that in real life, the monitor sits only a foot or two in front of you, requiring that you focus at near distance.  This is tiring and ruins your eyesight.  In a HMD, the focus is set at infinity, so you’re looking off into the distance all the time.<sup>1</sup></p>
+
+<p>In <a href="http://www.roadtovr.com/2012/09/24/ibex-virtual-reality-desktop-environment-oculus-rift-1325">an in-depth interview with Ben Lang at Road to Virtual Reality</a>, Hesham explained another possible advantage:</p>
+
+<p>“Virtual reality desktops can in the short term increase the working space that we have so that, instead of needing the space for a 30″ monitor a few of them and the associated costs, you can create virtual workspaces at whatever size you need and lay them out however you want while hopefully still comfortably working with them. If one is flying on a plane, for example, using something like the Leap Motion and the Rift, you can end up working on many much larger screens just as you’re used to at home without being constrained by the tiny laptop screen you have.”</p>
+
+<p>I think that would be just great.  My 15” MacBook Pro does not really afford enough space to work comfortably.  I like using my 27” iMac much better, but even that is often not enough.  Part of the problem is that we are constrained to rectangular screen spaces.  If applications are not optimized for full-screen use, the windows often become quite crowded and don’t seem to make efficient use of space.</p>
+
+<p>Ibex doesn’t solve this problem (at least not yet) because it works by rendering the main screen drawn by the OS onto a 3D plane inside the environment.  Therefore, all of the windows are still constrained to the bounds of a virtual monitor.  It would be better if the windows themselves were added rather than the entire desktop environment.  I suspect this can be done.  It would work just like unity mode in Parallels or Fusion.  But given how clunky those can be, I think we won’t really achieve an optimum result without a fully customized window manager.</p>
+
+<p>Then next problem is resolution.  If you play with Ibex, you’ll see that it’s totally inadequate.  At 3840x2400, the body text of this blog is quite readable, but optical distortion makes the menu bar, shortcuts and tab titles quite difficult. At 1920x1200, I could barely read the body text.  The Oculus Rift dev kit’s resolution is only 1280x800, and that’s divided between two eyes (640x800).  Then you have to subtract even more resolution due to optical distortion.  Here&#39;s what it looks like (click for full-size):</p>
+
+<p><a href="https://s3.amazonaws.com/jstarrdewar.com.bucket/Ibex_blog.jpg" style="white-space: normal">
+<span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/ibex_blog-712x401-5c5548.jpg"></span>
+<span data-src="/generated/ibex_blog-1280x720-5c5548.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/ibex_blog-712x401-5c5548.jpg" alt="">
+</noscript>
+</span></p>
+
+<p></a></p>
+
+<p>Here it is at 3840x2400 (this is roughly the resolution of the sci-fi goggles in <em>Snow Crash</em>):</p>
+
+<p><a href="https://s3.amazonaws.com/jstarrdewar.com.bucket/Ibex_3840x2400.jpg" style="white-space: normal">
+<span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/ibex_blog-712x401-5c5548.jpg"></span>
+<span data-src="/generated/ibex_blog-1280x720-5c5548.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/ibex_blog-712x401-5c5548.jpg" alt="">
+</noscript>
+</span></p>
+
+<p></a></p>
+
+<p>Meanwhile, I’ve become spoiled by my laptop’s retina display.  By the time the Oculus headset comes to market, I believe most if not all of Apple’s computers will feature retina displays.  Surely the lineup will have changed over completely by Christmas 2014.  For an HMD-based work environment to really offer an advantage over monitors, it will have to offer resolution to match.  Unfortunately that’s a much bigger challenge than you might realize.  Since the Oculus has such a wide field of view, the necessary resolution is truly staggering.</p>
+
+<p>Here&#39;s some quick and dirty math to determine just how much you need. The 27” monitor on my desk at the distance I’m sitting has a field of view of roughly 45 degrees.  To achieve an acceptable retina resolution, I think Apple will have to up the screen to 3840x2400.  Let’s say a theoretical retina Oculus headset has a FOV of 120 degrees.  To match the retina iMac, the screen would need 10,240 pixels horizontally.<sup>2</sup></p>
+
+<p>Unfortunately, this will probably still look worse, because the image is divided into a stereo pair.  So to really look excellent, the screen has to be 20,480 pixels wide!  Assuming that the FOV on the headset is the same vertically as horizontally, the screen would need to be 10,240 pixels tall (it isn’t divided vertically, so you could pixel-double vertically to reduce strain on the GPU).</p>
+
+<p>That means a retina iMac would need to push “only” 9,216,000 pixels, while a computer hooked up to a retina Oculus device would need to push 209,715,200.  Since lag is a major issue for the user experience in VR, it has to push those pixels at 60 frames per second.  In other words, you’ll need a really serious graphics card with a ton of VRAM, as well as a heavy-duty CPU and lots of system RAM to handle all the high-resolution graphics.</p>
+
+<p>Therefore, if widespread demand was kindled for a product like this, there would be a corresponding resurgence in demand for the latest and greatest in processing power, and big towers to hold all of that muscle.  That’s why I say it could breathe new life into the PC business, which is currently losing to the mobile world’s demand for low-wattage chips.  It seems like just the thing Intel would like to see happen, given their current leadership in big iron.</p>
+
+<p>Could you build a screen like that?  A 7” screen at that resolution would require a dot pitch of 6.1 μm.  The highest-resolution full-color display available today has a pixel density of 9.4 μm: <a href="http://www.microoled.net/news/news-from-microoled">http://www.microoled.net/news/news-from-microoled</a> (second entry).  It’s an OLED that squeezes a resolution of 1280x1024 into only .61 inches.  It&#39;s also available with a pixel density of 4.7 μm as a monochrome display (perfect for dogs, I guess).  We&#39;re almost there already.</p>
+
+<p>However, it seems to me that the only thing that can generate enough demand to warrant scaling that screen up to 7” is a head-mounted display like the Oculus.  It would be a complete waste of resources to build an iPhone with a screen 10 times sharper than the current retina display (for that matter, it’s already getting silly with the rash of 440ppi screens coming to market this spring - you can&#39;t discern pixels beyond about 300ppi).  So we are faced with a chicken-and-egg problem.</p>
+
+<p>The first-generation Oculus doesn’t need to get anywhere near retina resolution to be successful as a gaming device.  It’s much harder to discern pixels when there is a lot of motion in a scene.  If you show a trained eye a 480p video of an action scene, it will take a few moments before they realize you’re lying to them about it being 1080p.  The average person will take much longer.  I see people who paid for fancy HDTV’s and fancy HD cable service happily watching HBO in standard definition without realizing their mistake (it drives me nuts: “switch to the 900’s!”).  It’s only when the action stops and there is a lot of textual information on screen that the difference becomes apparent.</p>
+
+<p>From everything we&#39;ve heard thus far, the consumer version will likely ship with a 1080p screen (although <a href="http://www.smartkeitai.com/sharp-6-1-inch-wqxga-2560x1600-igzo-smartphone-display-prototype-eyes-on-at-ces-2013-video/">this 6.1-inch, 500ppi, 2560x1600 display</a> from Sharp would be sweet).  I foresee mobile device screens getting up to the 600ppi range before the resolution arms race ends.  After that, it’s really up to the nascent HMD market (which, don’t forget, includes Google Glass) to drive demand for even higher pixel density.</p>
+
+<p>For now, we’ll have to stick with games, but (<em>if</em> the Oculus and/or Google Glass create enough demand) ten years from now the graphics power and displays needed for retina-level virtual-reality are likely to be priced within reach of consumers.  Power users – the type who would drop $1000-2000 on a 30” display today – probably won’t have to wait that long.  The virtual workspace technology will probably be useable within the next three to five years.<sup>3</sup>  Hopefully with projects like Ibex, we’ll be ready when that day comes.</p>
+
+<p>Related Posts: <a href="/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness/">Motion Tracking Goes a Long Way Towards Eliminating VR Sickness</a></p>
+
+<hr>
+
+<p><sup>1.</sup> Not having used the device yet, I can’t say whether there would be problems with your brain expecting to need to refocus on objects at different distances.  It’s probable that won&#39;t be an issue because in very bright environments, your eyes have a very deep depth of field.</p>
+
+<p><sup>2.</sup> Roger Clark <a href="http://www.clarkvision.com/articles/human-eye/index.html">calculated on his site</a> that the actual resolution of the human eye at a 120-degree FOV is 24000x24000 pixels.  My calculations are not as scientific as his since they&#39;re based on what Apple defines as &#39;retina&#39; resolution for its laptop displays. There are a number of printers on the market capable of 4800x2400 dpi.  It would be an interesting experiment to create some prints and put them in a VR housing to see if that was sufficiently high resolution.</p>
+
+<p><sup>3.</sup> I’m thinking a resolution of 10240x5120 gives us the same virtual screen dot-pitch that we’re currently accustomed to, and 10240x10240 might give us a nice middle ground.  Improving just the vertical resolution would make a noticeable difference, and it isn&#39;t uncommon.  The current version of the Oculus certainly takes advantage of all the vertical resolution it can, and movies shot on anamorphic lenses also have more resolution vertically than horizontally.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[An Instantly Available Web Server is Essential for JavaScript and HTML Development]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2012/09/29/an-instantly-available-web-server-is-essential-for-javascript-and-html-development/"/>
+    <updated>2012-09-29T17:06:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2012/09/29/an-instantly-available-web-server-is-essential-for-javascript-and-html-development</id>
+    <content type="html"><![CDATA[<p>When beginners first embark on an HTML project, they generally test their work by simply double-clicking the index.html file and opening it in a browser directly. You can often get quite far into a project this way, and then comes the shock: you upload to a web server, and suddenly everything is broken. Your images don&#39;t load and your links don&#39;t work.</p>
+
+<p>This happens because links on the file system are relative to the file that tries to open them; on a web server, they are typically relative to the base URL instead.</p>
+
+<p>That&#39;s not the only problem; typically callbacks from external services won&#39;t work, and neither will iFrames. So your social media buttons will be broken too.</p>
+
+<p>The solution to this is simple. Always develop locally with a web server. Macs have Apache installed by default and it&#39;s easy to install WAMP/MAMP/LAMP/XAMP and use that for your server. Another major benefit to this is that you can connect to your computer from mobile device and test your changes with a simple save-and-reload. It&#39;s far more efficient than pushing to FTP every time. There&#39;s just one problem with the built-in Apache or LAMP-stack solution:</p>
+
+<p>It&#39;s inconvenient.</p>
+
+<p>On Mac OS X, you are restricted to placing all your projects in the sites folder without reconfiguring Apache, and MAMP Pro places the same restriction on you. Moreover, as you move between projects, you have to point the webroot at different folders, which tends to be just time-consuming enough that it feels like a chore to be put off. That, or you have to navigate to your project root in the browser, annoying on mobile devices. Apache takes a long time to start up as well. As a result, I still see inexperienced developers using the filesystem to test their apps, and encountering the same unexpected difficulties.</p>
+
+<p>Stop doing that! There&#39;s a better way. Chances are, Apache isn&#39;t the only web server built into your computer. Python and Ruby come bundled on most machines, and they include their own web servers. Here&#39;s the command to bring up the Python one:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">python -m SimpleHTTPServer
+</code></pre></div>
+<p>Do you enjoy clearing your cache every time you reload the page while you&#39;re developing an app? If so, you&#39;re all set. Otherwise, not so much, because SimpleHTTPServer has caching enabled by default. A Google search for &quot;non-caching simple web server&quot; leads us to a <a href="http://chrismdp.com/2011/12/cache-busting-ruby-http-server/">much better solution</a>, courtesy of <a href="http://chrismdp.com/workwithme.html">Chris Parsons</a>. (Chris credits <a href="https://github.com/pmarti">Pablo Marti</a> for coming up with this). For convenience&#39; sake, I made a gist of this, embedded below:
+<script src="https://gist.github.com/3805501.js"> </script></p>
+
+<p><a href="https://gist.github.com/gists/3805501/download">Click here</a> to download it as a file. You can use this script directly by saving it in the directory you want to serve and issuing the following command:</p>
+
+<p><code>ruby http</code></p>
+
+<p>Or you can save it in <code>/bin</code> to make it universally available. You&#39;ll need to make it executable for this to work.</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="nb">cd</span> /bin
+chmod +x http
+</code></pre></div>
+<p>Henceforth, all you have to do is drag the folder you want to serve onto Terminal.app&#39;s Dock icon and type <code>http</code> It&#39;s instantaneous and convenient. You&#39;ll never be tempted to do it the wrong way again.</p>
+
+<p><strong>Update:</strong></p>
+
+<p>A new, very convenient solution is now available in the form of <a href="http://yeoman.io/">Yeoman</a>&#39;s <code>yeoman server</code> command. (Versions prior to 1.0. See update below)</p>
+
+<p>If you have PHP 5.4 or later installed, you can use this command: <code>php -S localhost:8000</code> to launch the new built-in server.</p>
+
+<p><strong>Update 2:</strong></p>
+
+<p>The <a href="http://blog.jetbrains.com/webide/2013/02/webstorm-6-eap-build-126-254/">latest WebStorm EAP release</a> contains a built-in web server that you can use on port 63342.</p>
+
+<p><strong>Update 3:</strong></p>
+
+<p>Yeoman has removed the <code>yeoman</code> command. To run the server you now use <code>grunt server</code>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Extending Paul Irish's body-class IE CSS override technique with JavaScript]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2012/09/27/extending-paul-irishs-body-class-ie-css-override-technique-with-javascript/"/>
+    <updated>2012-09-27T15:59:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2012/09/27/extending-paul-irishs-body-class-ie-css-override-technique-with-javascript</id>
+    <content type="html"><![CDATA[<p>I think as web developers we&#39;re all pretty familiar with this block of code, or something like it:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="na">href=</span><span class="s">&quot;css/style.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!--[if IE 8]&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;css/ie8.css&quot;  /&gt;&lt; ![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 7]&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;css/ie7.css&quot;  /&gt;&lt; ![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 6]&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;css/ie6.css&quot;  /&gt;&lt; ![endif]--&gt;</span>
+</code></pre></div>
+<p>When I see this I get depressed.  It just feels like so much work to keep all the overridden classes straight, especially with the oldIE&#39;s terrible dev tools.  Paul Irish and HTML5 Boilerplate have since popularized a <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">technique that I greatly prefer</a>: rather than having the overridden styles in a separate stylesheet, you can place them right below the original declaration.  It requires a lot less mental overhead to keep track of your overrides this way.</p>
+
+<p>Here&#39;s what the code block above looks like in HTML5 Boilerplate:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="c">&lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span> <span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!--&lt;![endif]--&gt;</span>
+</code></pre></div>
+<p>Here&#39;s how it&#39;s used on this site:</p>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.lt-ie9</span> <span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">header</span> <span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Open Sans&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.lt-ie9</span> <span class="nt">aside</span><span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="k">padding-left</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">240px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.lt-ie9</span> <span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">nav</span> <span class="p">{</span>
+  <span class="k">padding-right</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can also use this technique with JavaScript to do a lot of useful things.  I&#39;ve found a few which I&#39;ll share with you.</p>
+
+<p>Now were you wondering about <code>no-js</code>?  This is a simple example of using JavaScript to control overrides.  The Modernizr library, very common on the web these days, provides this to give you a way of styling your page especially for people who have disabled JavaScript.  When Modernizr loads, it will remove the <code>no-js</code> class.  You could use this knowledge to show a message telling your users that JavaScript isn&#39;t optional on your site, for example, using only css.</p>
+
+<p>What else can we do?  Well a problem I have run into while developing responsive web sites is that many Android phones won&#39;t trigger the mobile layout.  The problem varies from phone to phone but I think it&#39;s generally caused by the phone attempting to masquerade as a much larger screen than it actually is.  For example, a certain HTC phone was reporting its screen size as 1280x720, so my media query was ignoring it.  Result?  The menu was too small to be usable.  The solution?  Fall back on <a href="http://detectmobilebrowser.com/">user-agent detection</a>.  However, I still wanted to keep the CSS simple and not build out a separate css file for mobile, so I used the UA detection to add a <code>mobile</code> class to the html tag:</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="c1">// Using jQuery version of script from http://detectmobilebrowser.com</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">mobile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;mobile&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nf">#menu</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.mobile</span> <span class="nf">#menu</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Another useful idea I had was to create an override to support retina displays.  Detecting a retina display with JavaScript is easy!</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;retina&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nf">#profile</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(profile_1x.jpg)</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">50px</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.retina</span> <span class="nf">#profile</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(profile_2x.jpg)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>I was worried that the browser would try to load all the 1x assets before trying to load the 2x assets, but I found that the JS ran fast enough to outpace the browser, and it only attempted to load the 2x assets.  So this is a pretty elegant solution, in my book.</p>
+
+<p>As an aside, in iOS 6, there&#39;s a new webkit prefix that does retina detection for you: <code>-webkit-image-set(url(img_1x.png) 1x, url(img_2x.jpg) 2x)</code></p>
+
+<p>Since only Apple products currently have retina displays, this might work in the near term, but with Windows 8 support for 2x resolution screens, and the new Nook HD having a retina resolution, those days are numbered.</p>
+
+<p>I hope that this inspires you!  It seems the possibilities are endless, and using overrides hopefully keeps your css nice and readable.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Correct Way to Override Concrete Backbone Methods Like Model.save]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2012/07/20/the-correct-way-to-override-concrete-backbone-methods/"/>
+    <updated>2012-07-20T16:07:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2012/07/20/the-correct-way-to-override-concrete-backbone-methods</id>
+    <content type="html"><![CDATA[<p>I&#39;ve been using Backbone.js for the first time on my latest project.  I&#39;ve found it to be very helpful, providing a clear structure for breaking up large pieces of JavaScript into smaller, more manageable submodules.</p>
+
+<p>I just ran into an issue when I decided I needed to override the set and save methods of the Model class.  I followed the documentation&#39;s example (reproduced below):</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="nx">set</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">set</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Unfortunately, it didn&#39;t work fully.  Only one of my calls to <code>save()</code> would work with the override in place.  It turns out there are a few different things that can go wrong.</p>
+
+<p>First of all, you should return the result of the call to the prototype.  It&#39;s not always void, and if it gets called indirectly there will be problems from internal methods that read the return value.  So this is a better template to follow:</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="nx">set</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">set</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>(Thanks to Eggi and Brian Genisio from pointing this out in their comments on this <a href="http://stackoverflow.com/questions/7607921/backbone-js-collection-create-and-overridden-model-set">Stack Overflow Answer</a>.)</p>
+
+<p>If you need to run the super method before your override logic, then you can store the returned value (I don&#39;t think this will be a common scenario with Backbone):</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="nx">set</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">set</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The second problem you may encounter (more specific to set/save) is that the actual function signature of Backbone.set and Backbone.save is this:</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="nx">set</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>
+<p>What happens is that you can call <code>set()</code> or <code>save()</code> you can use two different forms:</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="c1">// These are equivalent:</span>
+<span class="nx">Model</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">);</span>
+<span class="nx">Model</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span><span class="nx">key</span><span class="o">:</span> <span class="nx">value</span><span class="p">});</span>
+</code></pre></div>
+<p>This works because Backbone checks to see if <code>key</code> is an object literal or not with <code>_.isObject(key)</code>.  If it is, then it assumes <code>key</code> is attributes and the <code>value</code> argument actually represents the options object (it simply ignores the <code>options</code> argument).</p>
+
+<p>The upshot of this is that if you override the function signature you can&#39;t use the <code>(&#39;key&#39;, &#39;value&#39;)</code> form without doing similar logic in your method override.  I suppose this is why the documentation shows only the object literal form in their example.  It&#39;s a bit impractical to recreate this every time you override the method, especially because you are probably responding to the attributes.  However, later on you may not remember that you have overriden the save or set method and attempt to call it with the simplified key/value form.  That will leave you scratching your head for a little while until you Google this blog post ;-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Safari 5.1 broke HTML native drag and drop?]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2012/07/12/stack-overflow-safari-5-1-broke-html-native-drag-and-drop/"/>
+    <updated>2012-07-12T07:23:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2012/07/12/stack-overflow-safari-5-1-broke-html-native-drag-and-drop</id>
+    <content type="html"><![CDATA[<p>My answer to a question on Stack Overflow: <a href="http://stackoverflow.com/a/11499782/1084434">http://stackoverflow.com/a/11499782/1084434</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What kind of PayPal sandbox account is necessary for Express Payments rails module?]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2012/03/13/stack-overflow-what-kind-of-paypal-sandbox-account-is-necessary-for-express-payments-rails-module/"/>
+    <updated>2012-03-13T06:13:00-07:00</updated>
+    <id>http://jstarrdewar.com/blog/2012/03/13/stack-overflow-what-kind-of-paypal-sandbox-account-is-necessary-for-express-payments-rails-module</id>
+    <content type="html"><![CDATA[<p>My answer to a question on Stack Overflow: <a href="http://stackoverflow.com/a/9679187/1084434">http://stackoverflow.com/a/9679187/1084434</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gotcha When Testing Jsonify Views with RSpec]]></title>
+    <author>
+      <name><![CDATA[John Starr Dewar]]></name>
+    </author>
+    <link href="http://jstarrdewar.com/blog/2012/02/29/gotcha-when-testing-jsonify-views-with-rspec/"/>
+    <updated>2012-02-29T20:11:00-08:00</updated>
+    <id>http://jstarrdewar.com/blog/2012/02/29/gotcha-when-testing-jsonify-views-with-rspec</id>
+    <content type="html"><![CDATA[<p>I&#39;m kicking myself because it took me a long time to figure out something so obvious.  However, this snuck up on me because I refactored a controller to use the <a href="https://github.com/bsiggelkow/jsonify">Jsonify gem</a> instead of <code>render json: {object}</code>.</p>
+
+<p>When you are testing the response body in RSpec controller specs, it will work with <code>render json</code> no matter what.  So, as an example, <code>render json: {hello:&quot;world&quot;}</code> returns <code>&#39;{&quot;hello&quot;:&quot;world&quot;}&#39;</code> inside <code>response.body</code>.  But after you switch it to a view with Jsonify like this: <code>json.hello &quot;world&quot;</code>, you get <code>&#39;{}&#39;</code>.  What gives?</p>
+
+<p>Well the answer is right in the readme for <a href="https://github.com/rspec/rspec-rails">rspec-rails-2</a>:</p>
+
+<blockquote>
+<p>RSpec&#39;s preferred approach to spec&#39;ing controller behaviour is to isolate the controller from its collaborators. By default, therefore, controller example groups do not render the views in your app. Due to the way Rails searches for view templates, the template still needs to exist, but it won&#39;t actually be loaded.</p>
+</blockquote>
+
+<p>Therefore, if you want to render your views you must include the <code>render_views</code> directive in your <code>describe</code> block:</p>
+<div class="highlight"><pre><code class="ruby language-ruby" data-lang="ruby"><span class="n">describe</span> <span class="no">WidgetsController</span> <span class="k">do</span>
+  <span class="n">render_views</span>
+</code></pre></div>
+<p>That probably would have jumped out at me a lot sooner if I was trying to test a standard .erb view, but of course it applies to any templating solution, and it&#39;s best not to forget it!</p>
+]]></content>
+  </entry>
+  
+</feed>

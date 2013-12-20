@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>What Would a 4K Rift Look Like?</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>What Would a 4K Rift Look Like?</h2>
+
+  <div class="list-date">02 Nov 2013</div>
+</div>
+
+<div class="post">
+  <p>I’ve been stewing on the idea of a retina VR display, and I got interested in finding out what it would look like, and if the optics of the Oculus Rift become a limiting factor.</p>
+
+<p>I had an idea: I can’t get ahold of a super-high resolution display, but my printer is certainly capable of producing much sharper images than the current Rift.  So I decided to try printing out a high resolution rendering to see if I could make my own retina Rift.</p>
+
+<p>I used modo for the render, with a sample scene from the object library.  I used the standard 3D camera mode with barrel distortion and a 115-degree FOV, which is what I normally see in the Rift with my C cups.  The distortion in modo is not quite the same as the correction that the Oculus SDK provides, but it’s close enough to work for this experiment.  I incorporated a screenshot of this blog taken while operating in retina mode (this was back before the redesign).</p>
+
+<p>Getting the images to line up properly was a bit of a challenge.  First I rendered at 1280x800 and used fullscreen mode in Photoshop to preview it on the Rift.  I created guides in photoshop 64mm apart and centered each side of the image over them.  By default, modo will put the images fully side-by-side, but to create an image for the Rift, you need to cut some of the area out of both images between the eyes.  Interestingly, my eyes are 66mm apart but when I tried putting the image centers 66mm apart rather than 64mm, I could not resolve a 3D image, even after adjusting the camera separation in modo as well.</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/modo_rift_render-712x445-5ac492.jpg"></span>
+<span data-src="/generated/modo_rift_render-1280x800-5ac492.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/modo_rift_render-712x445-5ac492.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>I rendered the image at 12800x8000 pixels, which works out to about 2171 ppi at the size of the Oculus display.  I figured that would be approximately retina quality, since the screenshot was at about the same resolution in the center of the image.</p>
+
+<p>Unfortunately, that high resolution was too high for my printer.  It maxes out at only 600 dpi.  Even at that resolution, it turns out, the real resolution limit is the grain of the paper.  Still, that’s about 3500 dots across, so very nearly a simulation of a 4K display.  I carried on.  If you happen to have a printer capable of a much higher resolution and want to follow along, you can <a href="https://s3.amazonaws.com/jstarrdewar.com.bucket/rift_retina_test_huge.jpg">download the full-sized 12.8K image here</a> and follow along.</p>
+
+<p>Next, I needed to take a look at my creation through the C cups.  My first idea was to try stuffing the print through the hole where the cups attach and using a plain white background as a backlight.  This worked OK, but the screen door was apparent and made it difficult to see any additional resolution.  The other problem was that once I cut the print in half, I had a terrible time getting it lined up properly again.</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/rift_print_inside-712x471-a1b09e.jpg"></span>
+<span data-src="/generated/rift_print_inside-1424x942-a1b09e.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/rift_print_inside-712x471-a1b09e.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>I decided my next approach would be to make a cardboard Rift.  I sacrificed a nearly empty box of checks to the cause.  The problem with this approach was that I could not get adequate light into the box and it was too hard to see.</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/cardboard_oculus-712x534-7fb7ce.jpg"></span>
+<span data-src="/generated/cardboard_oculus-1424x1068-7fb7ce.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/cardboard_oculus-712x534-7fb7ce.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>Finally I resorted to just holding the eyecups above the print, one in each hand.  I had to hold really still but at last I was able to reach some conclusions.</p>
+
+<p>First was the ooh-ahh moment; the depth that you can perceive in the image is tied very closely to the overall resolution.  With this high-res render, I could perceive far greater depth.  That will make games that try to play on fear of heights, like <a href="https://share.oculusvr.com/app/aaaaaaaaaaaaaaaaaaaaculus">AaaaaAAaaaAAAaaAAAAaCULUS!!!</a>, much more impactful.</p>
+
+<p><a href="http://www.booncotter.com/some-preliminary-vr-metrics/#comments">Boon Cotter tried to calculate what the actual maximum depth that can be seen</a> in the Rift is and came up with 300m — but in my personal experience it&#39;s much less than that.  In real life I can perceive stereo separation up to at least 800m (Boon&#39;s calculations were that the maximum possible would be 745m, but as a commenter pointed out there&#39;s a lot of subtlety to the human vision system which makes it hard to determine the answer with simple trigonometry).</p>
+
+<p><span class="fullWidthImage" itemprop="image" data-picture data-alt >
+<span data-src="/generated/through_the_looking_glass-712x534-7eb2a5.jpg"></span>
+<span data-src="/generated/through_the_looking_glass-1424x1068-7eb2a5.jpg" data-media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"></span>
+<noscript>
+<img src="/generated/through_the_looking_glass-712x534-7eb2a5.jpg" alt="">
+</noscript>
+</span></p>
+
+<p>It looks like a 600 ppi display is really about the limit of the eye cup lens optics that came with the dev kit.  Obviously I’m not correcting for chromatic aberration but I don’t think it would be possible to correct for the amount of smearing that occurs around the edge of the frame, something that you really don’t notice in the current rift.</p>
+
+<p>The result is that the block of text in the center of the “screen” is quite legible — impressive considering how <em>illegible</em> text on the current headset can be — but the list of recent posts could only be read when hovering directly over it with the eye cup.</p>
+
+<p>I had a chance to ask Palmer Luckey about this directly, and he said that the general optical configuration of the rift can avoid monochromatic aberrations all the way up to retina resolutions.  However, the optics have to made with that resolution in mind.  Oculus now has experts on staff who know how to make these kinds of specific optimizations.  However, we shouldn&#39;t expect the optics to be optimized for resolutions higher than the screen.  The sharper the screen, the more expensive the lenses get, because the manufacturing process and materials must be changed.</p>
+
+<p>Palmer also said that the optics on the upcoming 1080p rift will be considerably better than on the current rift.  In my ten-minute experience with the 1080p rift samples that have been making the rounds lately (and use the current optics) I wasn&#39;t able to discern any major shortcomings.  However I know that with my personal dev kit, I do notice some issues if I go looking for them, especially because my eyes are not exactly 64mm apart which means I can only get the image at optimal clarity in one eye or the other.</p>
+
+<p>(I know about the <a href="http://www.shapeways.com/shops/vrgear">IPD Adjuster from VR-Gear</a>, but I use the C cups so I need to find another solution).</p>
+
+<p><strong>Update:</strong> <a href="http://www.reddit.com/r/oculus/comments/1q1gvc/what_would_it_be_like_to_look_through_a_4k_rift_i/cd8ac8b">Palmer commented on reddit</a> and suggested using a window as a backlight for the checkbox *slaps forehead*. Here&#39;s my response:</p>
+
+<p>&quot;Hey Palmer, thanks for reading! I did the experiment in the middle of the night, but I just gave your suggestion a go:
+My windows are all filthy which actually is quite an issue because the dust spots interfere with the image. A light table would definitely be the best solution. My dad has one in a closet somewhere so I&#39;ll have to dig it out next time I visit.</p>
+
+<p>Something I noticed when trying to use the rift backlight: the paper grains show up strongly in the backlight and are somewhat larger than the dots of ink.</p>
+
+<p>Overall a bit easier than holding the lenses by hand though. If I ever get ahold of a better printer, a light table, and better paper (oh, and maybe even your new and improved optics) I&#39;ll give it another go.&quot;</p>
+
+<p>I also had the idea on the reddit thread that one might be able to print on Glass like <a href="http://www.fractureme.com">Fracture</a>, but according to their website they print at 400 ppi.</p>
+
+<p><strong>Update 2:</strong> Palmer suggested using an overhead transparency film for inkjets.  The guy ain&#39;t just pretending to be smart.</p>
+
+<p><em>Related Posts:</em></p>
+
+<p><a href="/blog/2013/01/26/the-promise-of-a-retina-vr-display/">The Promise of a Retina VR Display</a></p>
+
+<p><a href="/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness/">Motion Tracking Goes a Long Way Towards Eliminating VR Sickness</a></p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2013/11/02/what-would-a-4K-rift-look-like/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2013/11/02/what-would-a-4K-rift-look-like/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

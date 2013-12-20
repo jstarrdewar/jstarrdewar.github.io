@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/12/19/stack-overflow-better-way-to-animate-window-scroll-top/</loc>
+    
+    <lastmod>2013-12-19T22:58:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/11/14/introducing-adhesive/</loc>
+    
+    <lastmod>2013-11-14T08:16:12-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/11/02/what-would-a-4K-rift-look-like/</loc>
+    
+    <lastmod>2013-11-02T04:56:10-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/10/23/motion-tracking-goes-a-long-way-towards-eliminating-vr-sickness/</loc>
+    
+    <lastmod>2013-10-23T13:56:10-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/10/12/ive-redesigned-the-blog-again/</loc>
+    
+    <lastmod>2013-10-12T11:59:35-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/05/24/try-this-when-uiview-animations-dont-work/</loc>
+    
+    <lastmod>2013-05-24T21:45:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/05/09/stack-overflow-android-listview-refresh-single-row/</loc>
+    
+    <lastmod>2013-05-09T02:31:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/05/02/stack-overflow-a-valid-provisioning-profile-for-this-executable-was-not-found/</loc>
+    
+    <lastmod>2013-05-02T23:21:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/03/16/use-salted-meat-instead-of-soy-sauce-for-better-fried-rice/</loc>
+    
+    <lastmod>2013-03-16T22:33:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/03/07/access-component-libraries-in-intellij-or-flash-builder/</loc>
+    
+    <lastmod>2013-03-07T12:36:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/02/28/use-uglify-to-automatically-strip-debug-messages-from-your-javascript/</loc>
+    
+    <lastmod>2013-02-28T23:52:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/02/24/an-example-using-jquery-ui-draggable-with-metafizzys-isotope-plugin/</loc>
+    
+    <lastmod>2013-02-24T13:19:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/02/02/dont-repeat-yourself/</loc>
+    
+    <lastmod>2013-02-02T23:52:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2013/01/26/the-promise-of-a-retina-vr-display/</loc>
+    
+    <lastmod>2013-01-26T21:52:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/09/29/an-instantly-available-web-server-is-essential-for-javascript-and-html-development/</loc>
+    
+    <lastmod>2012-09-29T17:06:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/09/27/extending-paul-irishs-body-class-ie-css-override-technique-with-javascript/</loc>
+    
+    <lastmod>2012-09-27T15:59:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/07/20/the-correct-way-to-override-concrete-backbone-methods/</loc>
+    
+    <lastmod>2012-07-20T16:07:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/07/12/stack-overflow-safari-5-1-broke-html-native-drag-and-drop/</loc>
+    
+    <lastmod>2012-07-12T07:23:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/03/13/stack-overflow-what-kind-of-paypal-sandbox-account-is-necessary-for-express-payments-rails-module/</loc>
+    
+    <lastmod>2012-03-13T06:13:00-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/02/29/gotcha-when-testing-jsonify-views-with-rspec/</loc>
+    
+    <lastmod>2012-02-29T20:11:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/02/27/the-most-valuable-checkbox-in-dvd-studio-pro/</loc>
+    
+    <lastmod>2012-02-27T22:09:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/02/10/rvm-and-intellij-rubymine-integration-tip/</loc>
+    
+    <lastmod>2012-02-10T12:17:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/02/08/input-box-tips-part-2/</loc>
+    
+    <lastmod>2012-02-08T12:05:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/02/04/input-box-tips-part-1/</loc>
+    
+    <lastmod>2012-02-04T13:27:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/31/thunderbolt-has-made-the-mac-pro-obsolete/</loc>
+    
+    <lastmod>2012-01-31T16:10:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/31/should-apple-spin-off-its-pro-apps-division/</loc>
+    
+    <lastmod>2012-01-31T14:30:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/22/rvm-for-python-setting-up-virtualenv-and-virtualenvwrapper-on-lion/</loc>
+    
+    <lastmod>2012-01-22T00:16:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/21/migrating-wordpress-data-to-octopress/</loc>
+    
+    <lastmod>2012-01-21T23:34:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/21/moving-my-blog-to-octopress/</loc>
+    
+    <lastmod>2012-01-21T21:02:00-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/20/funny-microsoft-visual-studio-review-from-ars-technica/</loc>
+    
+    <lastmod>2012-01-20T10:19:32-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/06/logout-facebook-users-without-javascript-sdk/</loc>
+    
+    <lastmod>2012-01-06T14:37:09-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/03/rubymine-4-eap-fails-to-install-gems-needed-for-debugging-in-ruby-1-9-3p0/</loc>
+    
+    <lastmod>2012-01-03T22:48:47-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2012/01/01/imessage-stops-working/</loc>
+    
+    <lastmod>2012-01-01T21:36:37-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/14/easeljs-tweenjs-soundjs/</loc>
+    
+    <lastmod>2011-12-14T23:34:23-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/13/textmate-2-alpha/</loc>
+    
+    <lastmod>2011-12-13T14:02:12-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/13/another-ruby-specific-postgresql-fix/</loc>
+    
+    <lastmod>2011-12-13T10:54:42-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/06/launchcontrol-fails-to-start-postgresql-on-login/</loc>
+    
+    <lastmod>2011-12-06T15:41:28-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/05/using-the-intellij-configuration-server-plugin-to-sync-up-your-jetbrains-sub-ides/</loc>
+    
+    <lastmod>2011-12-05T14:41:24-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/03/nokogiri-gem-incompatible-library-version/</loc>
+    
+    <lastmod>2011-12-03T22:45:17-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/12/03/you-can-now-rearrange-desktops-in-mission-control/</loc>
+    
+    <lastmod>2011-12-03T15:35:23-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/11/15/the-joy-of-flashlog/</loc>
+    
+    <lastmod>2011-11-15T13:36:02-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/11/12/fun-with-apples-new-multitouch-trackpads/</loc>
+    
+    <lastmod>2011-11-12T14:28:55-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/11/08/setting-up-a-trust-file-for-flash-player/</loc>
+    
+    <lastmod>2011-11-08T15:07:01-08:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/11/04/ruby-segmentation-faults-and-abort-trap-6-in-lion-some-solutions/</loc>
+    
+    <lastmod>2011-11-04T13:52:30-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/11/01/usrbinruby-illegal-switch-in-rubyopt-o-runtimeerror/</loc>
+    
+    <lastmod>2011-11-01T15:54:03-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jstarrdewar.com/blog/2011/10/28/extend-jquery-draggable-to-work-with-isotope/</loc>
+    
+    <lastmod>2011-10-28T00:59:35-07:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/about/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/follow/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/</loc>
+    <lastmod></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/at-the-ready.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/hyundai-tube.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/presentation-reel.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/reels.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/vfx-reel.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/visualization-reel.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://jstarrdewar.com/videos/world-of-the-borgias.html</loc>
+    <lastmod></lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.0</priority>
+  </url>
+  
+  
+</urlset>

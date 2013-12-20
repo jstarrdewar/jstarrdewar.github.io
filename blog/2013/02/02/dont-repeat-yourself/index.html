@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Don't Repeat Yourself</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>Don't Repeat Yourself</h2>
+
+  <div class="list-date">02 Feb 2013</div>
+</div>
+
+<div class="post">
+  <p>One of the most important tenets of computer programming is the DRY principle. “DRY” stands for “Don’t Repeat Yourself” and it’s a very powerful concept once mastered.  Avoiding repetition in code is critical to the goal of eliminating errors from the system and making it easy to maintain.  If the same lines of code are repeated throughout an application, when the system needs to be changed, all of those copies will have to be updated.  It’s often in this updating process when a small mistake or typo creeps in that will take many hair-rending hours to find later on.</p>
+
+<p>For programmers, identifying code that is not DRY is a good way to start in the refactoring process.  Refactoring means taking a unit of code and rewriting it without changing its functionality.  When undertaking a long-term project it is critical to refactor and to refactor often.  When suboptimal code is left for too long it creates big roadblocks in the future when developers return to add a new feature.  Therefore you should always leave extra room in your budget and schedule for refactoring.</p>
+
+<p>The DRY principle extends beyond the realm of computer programming.  Even non-engineers can benefit greatly from it.  Have you ever used a template to add common formatting to a document?  Have you ever used “Find and Replace”?  Then you have been following the principle.  </p>
+
+<p>There is a lot of software available that can help you stay DRY:  Apple provides Automator in Mac OS.  Photoshop has an “Actions” palette that can save you hours of tedium.  Learning to use these tools will give you a big leg up on the average Joe who contents himself with carefully repeating a task over and over again all day, unwittingly transforming himself into an expensive and unreliable machine.</p>
+
+<p>Unfortunately, staying DRY isn’t always easy.  It requires programmers to stop and think critically about the work that they’ve done.  It takes discipline to rework sections of code that work just fine but contain a lot of excess duplication.  While there are tools available that can find code that bears too much repetition, fixing the problem requires a degree of skill and planning that a computer does not begin to possess.  </p>
+
+<p>DRY is not a panacea; it’s important to understand that it won’t necessarily speed up a project, especially in the short run.  Maintaining coding standards instead should be thought of as an investment in the future of your application.</p>
+
+<h4>Tools We Use at The Code Builders</h4>
+
+<p>There are some important tools we use to help keep our code DRY.</p>
+
+<h5>CSS Preprocessors</h5>
+
+<p>Although the CSS language for describing the appearance of HTML is concise and easy to understand, it requires a lot of duplication.  For example, it lacks variables so one can’t define a color like “header-blue” and expect to use it throughout the document.  Instead, one must write in the hexadecimal code that represents the color over and over again.</p>
+
+<p>CSS preprocessors solve this problem by adding sorely-needed features to CSS.  The two most popular preprocessors are SASS and LESS, which are extremely similar to one another.  We use whichever is most convenient for the project at hand.  When the site is ready to deploy, the tool outputs standard CSS.  A nice bonus is that the preprocessor can compact the output so that it loads faster than it would if it was handwritten CSS.</p>
+
+<h5>Package Managers</h5>
+
+<p>It’s a lot of effort to find libraries needed for a project, download them into the project folder, and then keep them up-to-date as the various teams that maintain them bring out new versions.  Fortunately, a popular application called Bundler has inspired a new generation of package managers for all of our favorite languages.</p>
+
+<p>In PHP we use Composer; in Objective-C, Cocoapods.  JavaScript has npm, which was built for Node.js on the server, and Yeoman, which Google released last month and looks like a very promising tool for front-end development.</p>
+
+<p>Hopefully this brief introduction to the DRY principle has illuminated some of the problems that software engineers face, and some of the solutions available to them.  It may be counterintuitive, but it often takes longer to write concise code than it does to write thousands of lines of less-carefully constructed programming.  However, it is well worth the extra effort.  </p>
+
+<p>As a client, you should always insist on quality over quantity because code will be read many more times than it is written. Any time saved up front with shoddy coding will be lost at the end of the project as the system becomes more complicated and difficult to understand.  Keeping the code DRY helps mitigate stress around deadlines, and will lead to better results and a happier working relationship.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2013/02/02/dont-repeat-yourself/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2013/02/02/dont-repeat-yourself/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

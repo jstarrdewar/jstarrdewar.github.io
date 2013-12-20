@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Input Box Tips, Part 1: Limiting the Number of Characters</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>Input Box Tips, Part 1: Limiting the Number of Characters</h2>
+
+  <div class="list-date">04 Feb 2012</div>
+</div>
+
+<div class="post">
+  <p>There are a couple of top ranked Google results regarding input boxes that I think are a little out of date.  Here&#39;s one of them, from 2009:</p>
+
+<p><a href="http://www.mediacollege.com/internet/javascript/form/limit-characters.html">Limit the Number of Characters in a Textarea or Text Field</a>. This tutorial shows you how to build a textfield with a character limit and a counter, similar to what you see on Twitter.</p>
+
+<p>It shows two techniques for limiting character count.  Unfortunately, it glosses over the simpler of the two, which works for inputs: the <a href="http://www.w3schools.com/tags/att_input_maxlength.asp">maxlength attribute</a>.</p>
+
+<p>So if all you want to do is make a text input that only accepts, say, four characters (for example if someone was entering a year), this is what you would do:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;YYYY&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<div class="divider"></div>
+
+<p>Text areas are a tougher challenge because the <code>&lt;textarea&gt;</code> element doesn&#39;t have a maxlength attribute.  I don&#39;t like the solution in the article linked above because when you reach the limit, you see the last character you entered be deleted automatically.  It&#39;s not how most sites work, and I think having the text input simply not accept any more characters is more elegant and consistent with the behavior of <code>maxlength</code>. &lt;!-- more --&gt;</p>
+
+<div class="jsfiddle">
+<iframe style="width: 100%; height: 772px" src="http://jsfiddle.net/jstarrdewar/ubp6r/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+
+<p>The solution is to catch the <code>keydown</code> event before it reaches the textarea.  This is very easy to do with jQuery using <code>event.preventDefault()</code>, as you can see in the jsFiddle below, which shows how to create a Twitter-like text area limited to 140 characters or less.  We display the character count using <code>keyup</code> instead of <code>keydown</code>. Otherwise the count would get off by 1 when deleting text (because the keydown event fires before the textarea is updated).</p>
+
+<p>There is a small problem, which is that <em>all</em> keys will be ignored when the textfield is exactly 140 characters long.  This behavior is obviously not optimal.  Therefore, I added a switch case to whitelist certain keys.  Since nothing happens here, <code>break</code> is unnecessary until the last item in the whitelist.  The default case will be for any other key on the keyboard.  It stops event propogation.</p>
+
+<p>With that issue solved, there is still the problem that when the user pastes information into the textbox, its length may exceed the limit.  I chose a simple approach to fixing this: just listen for the <code>paste</code> event, then trim the content&#39;s length to the limit.  There is a trick to this.  The paste event is fired before the content is added to the text area, so you won&#39;t get an accurate count and the trim won&#39;t work.  Here is a <a href="http://www.mattbenton.net/2012/01/jquery-plugin-paste-events/">plugin</a> that solves this problem by giving you a <code>postpaste</code> event, or you could just use setTimeout directly.</p>
+
+<p>I usually prefer to use my favorite jQuery plugin: <a href="http://benalman.com/projects/jquery-dotimeout-plugin/">doTimeout</a>, but in this case it will take exactly the same amount of code as setTimeout, so I am using setTimeout below for the sake of simplicity.  In the code setting the delay to 0, i.e. <code>setTimeout(callback, 0)</code> would do the trick, since it will cause the code to execute on the next frame.  You don&#39;t have to think up an arbitrary delay for it to work, like 100ms, which I see a lot of people do.</p>
+
+<p>I&#39;ve added a delay because I think it&#39;s a little better to set a longer delay, and display a &quot;Too Long!&quot; message to let the user know why their content was trimmed.  You might also choose not to trim the content, instead changing the counter to another color, like red, or displaying a warning after the character count.  That way, the user could edit the pasted content down in the textfield itself.  It&#39;s up to you, so I suggest experimenting in the jsFiddle to see what behavior you like best.</p>
+
+<p>If jsFiddle is down, <a href="https://gist.github.com/1742886">here is a gist</a> you can look at instead.</p>
+
+<div class="divider"></div>
+
+<p>In <a href="/blog/2012/02/08/input-box-tips-part-2/">Part 2</a>, I show you the proper way to select all of the characters in an input when you click on it to focus.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2012/02/04/input-box-tips-part-1/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2012/02/04/input-box-tips-part-1/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>An Instantly Available Web Server is Essential for JavaScript and HTML Development</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=3"/>
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-152x152.png"/>
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/modernizr.custom.15501.js"></script>
+    <script type="text/javascript" src="/js/picturefill_matchmedia.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/sje1dhr.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load({
+          active: function () {
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <div id="topStripe" class="stripe"></div>
+
+    <header class="tk-omnes-pro">
+      <div class="container">
+
+        <h1>John Starr Dewar</h1>
+
+        <div id="pic">
+        </div>
+        <div id="nav">
+          <a href="/about">About</a>
+          <a href="/">Posts</a>
+          <a href="http://www.123contactform.com/form-724791/Email-Me">Email</a>
+          <a href="/follow">Follow</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="topMargin" class="margin"></div>
+
+
+    <div id="main" class="container">
+
+      <div class="site tk-freight-sans-pro">
+        <div id="home">
+  <h2>An Instantly Available Web Server is Essential for JavaScript and HTML Development</h2>
+
+  <div class="list-date">29 Sep 2012</div>
+</div>
+
+<div class="post">
+  <p>When beginners first embark on an HTML project, they generally test their work by simply double-clicking the index.html file and opening it in a browser directly. You can often get quite far into a project this way, and then comes the shock: you upload to a web server, and suddenly everything is broken. Your images don&#39;t load and your links don&#39;t work.</p>
+
+<p>This happens because links on the file system are relative to the file that tries to open them; on a web server, they are typically relative to the base URL instead.</p>
+
+<p>That&#39;s not the only problem; typically callbacks from external services won&#39;t work, and neither will iFrames. So your social media buttons will be broken too.</p>
+
+<p>The solution to this is simple. Always develop locally with a web server. Macs have Apache installed by default and it&#39;s easy to install WAMP/MAMP/LAMP/XAMP and use that for your server. Another major benefit to this is that you can connect to your computer from mobile device and test your changes with a simple save-and-reload. It&#39;s far more efficient than pushing to FTP every time. There&#39;s just one problem with the built-in Apache or LAMP-stack solution:</p>
+
+<p>It&#39;s inconvenient.</p>
+
+<p>On Mac OS X, you are restricted to placing all your projects in the sites folder without reconfiguring Apache, and MAMP Pro places the same restriction on you. Moreover, as you move between projects, you have to point the webroot at different folders, which tends to be just time-consuming enough that it feels like a chore to be put off. That, or you have to navigate to your project root in the browser, annoying on mobile devices. Apache takes a long time to start up as well. As a result, I still see inexperienced developers using the filesystem to test their apps, and encountering the same unexpected difficulties.</p>
+
+<p>Stop doing that! There&#39;s a better way. Chances are, Apache isn&#39;t the only web server built into your computer. Python and Ruby come bundled on most machines, and they include their own web servers. Here&#39;s the command to bring up the Python one:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">python -m SimpleHTTPServer
+</code></pre></div>
+<p>Do you enjoy clearing your cache every time you reload the page while you&#39;re developing an app? If so, you&#39;re all set. Otherwise, not so much, because SimpleHTTPServer has caching enabled by default. A Google search for &quot;non-caching simple web server&quot; leads us to a <a href="http://chrismdp.com/2011/12/cache-busting-ruby-http-server/">much better solution</a>, courtesy of <a href="http://chrismdp.com/workwithme.html">Chris Parsons</a>. (Chris credits <a href="https://github.com/pmarti">Pablo Marti</a> for coming up with this). For convenience&#39; sake, I made a gist of this, embedded below:
+<script src="https://gist.github.com/3805501.js"> </script></p>
+
+<p><a href="https://gist.github.com/gists/3805501/download">Click here</a> to download it as a file. You can use this script directly by saving it in the directory you want to serve and issuing the following command:</p>
+
+<p><code>ruby http</code></p>
+
+<p>Or you can save it in <code>/bin</code> to make it universally available. You&#39;ll need to make it executable for this to work.</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="nb">cd</span> /bin
+chmod +x http
+</code></pre></div>
+<p>Henceforth, all you have to do is drag the folder you want to serve onto Terminal.app&#39;s Dock icon and type <code>http</code> It&#39;s instantaneous and convenient. You&#39;ll never be tempted to do it the wrong way again.</p>
+
+<p><strong>Update:</strong></p>
+
+<p>A new, very convenient solution is now available in the form of <a href="http://yeoman.io/">Yeoman</a>&#39;s <code>yeoman server</code> command. (Versions prior to 1.0. See update below)</p>
+
+<p>If you have PHP 5.4 or later installed, you can use this command: <code>php -S localhost:8000</code> to launch the new built-in server.</p>
+
+<p><strong>Update 2:</strong></p>
+
+<p>The <a href="http://blog.jetbrains.com/webide/2013/02/webstorm-6-eap-build-126-254/">latest WebStorm EAP release</a> contains a built-in web server that you can use on port 63342.</p>
+
+<p><strong>Update 3:</strong></p>
+
+<p>Yeoman has removed the <code>yeoman</code> command. To run the server you now use <code>grunt server</code>.</p>
+
+</div>
+<div id="share">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="jstarrdewar" data-size="large"
+     data-count="none">Tweet</a>
+
+  <div style="float:right">
+    <div class="g-plusone" data-annotation="none"></div>
+
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'jstarrdewar-blog';
+  var disqus_identifier = '/blog/2012/09/29/an-instantly-available-web-server-is-essential-for-javascript-and-html-development/';
+  var disqus_url = 'http://jstarrdewar.com/blog/2012/09/29/an-instantly-available-web-server-is-essential-for-javascript-and-html-development/';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+    <div id="bottomMargin" class="margin"></div>
+    <div id="bottomStripe" class="stripe"></div>
+    <script type="text/javascript">
+      var topStripe = document.getElementById("bottomStripe");
+      var topMargin = document.getElementById("bottomMargin");
+      var mainContent = document.getElementById("main");
+      var bottomStripe = document.getElementById("bottomStripe");
+      var bottomMargin = document.getElementById("bottomMargin");
+
+      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
+      var bottomMarginHeight = bottomMargin.offsetHeight;
+
+      var seconds = 0;
+
+      function checkHeight() {
+        setTimeout(function () {
+          var totalHeight = decorationHeight + mainContent.offsetHeight;
+
+          if (totalHeight + bottomMarginHeight < window.innerHeight) {
+            if (window.innerHeight - totalHeight < 0) {
+              bottomMargin.style.height = "2rem";
+            } else {
+              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
+
+            }
+          }
+          if (seconds < 30) {
+            seconds++;
+            checkHeight();
+          }
+        }, 1000);
+      }
+      checkHeight();
+
+
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8569918-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>
