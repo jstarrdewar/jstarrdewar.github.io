@@ -34,3 +34,7 @@ function doSomethingCool() {
 There is a new version of UglifyJS now called UglifyJS2.  Its behavior is a bit different.  In order to get the dead-code remover to work, you have to activate the compressor.  So the command is now:
 
 `uglifyjs --compress --define DEBUG=false main.js -o main.min2.js`
+
+_Related Posts:_
+
+[Introducing Adhesive](/blog/2013/11/14/introducing-adhesive/)
