@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -71,40 +71,7 @@
     </div>
     <div id="bottomMargin" class="margin"></div>
     <div id="bottomStripe" class="stripe"></div>
-    <script type="text/javascript">
-      var topStripe = document.getElementById("bottomStripe");
-      var topMargin = document.getElementById("bottomMargin");
-      var mainContent = document.getElementById("main");
-      var bottomStripe = document.getElementById("bottomStripe");
-      var bottomMargin = document.getElementById("bottomMargin");
 
-      var decorationHeight = topStripe.offsetHeight + topMargin.offsetHeight + bottomStripe.offsetHeight;
-      var bottomMarginHeight = bottomMargin.offsetHeight;
-
-      var seconds = 0;
-
-      function checkHeight() {
-        setTimeout(function () {
-          var totalHeight = decorationHeight + mainContent.offsetHeight;
-
-          if (totalHeight + bottomMarginHeight < window.innerHeight) {
-            if (window.innerHeight - totalHeight < 0) {
-              bottomMargin.style.height = "2rem";
-            } else {
-              bottomMargin.style.height = (window.innerHeight - totalHeight) + "px";
-
-            }
-          }
-          if (seconds < 30) {
-            seconds++;
-            checkHeight();
-          }
-        }, 1000);
-      }
-      checkHeight();
-
-
-    </script>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -122,5 +89,6 @@
 
     </script>
 
+    <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>

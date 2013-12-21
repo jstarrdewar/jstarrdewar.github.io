@@ -5,6 +5,9 @@ url: http://jstarrdewar.com
 title: John Starr Dewar
 author: John Starr Dewar
 permalink: /blog/:year/:month/:day/:title/
+dart2js: ~/dart/dart-sdk/bin/dart2js
+dart_src: _dart/web
+dart_main: main.dart
 picture:
   source: assets/images/_fullsize
   output: generated
